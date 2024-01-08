@@ -1,7 +1,31 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+import me from "../assets/me.png";
+
 ---
 
+<style>
+    /* https://every-layout.dev/layouts/stack/#the-solution */
+    .stack > * + * {
+        margin-block-start: 1.5rem;
+    }
+</style>
+
 <BaseLayout pageTitle="Home">
+    <h1>Welcome to my website!</h1>
+
+    <div class:list={["flex", "gap-4"]}>
+        <Image src={me} alt={"A picture of me"} width={200} class:list={""}></Image>
+        <div class="stack">
+            <p>
+                Hello! I'm Fisher, and I'm a CS student.
+            </p>
+
+            <p>
+                I'm interested in backend development, package management, and functional programming.
+            </p>
+        </div>
+    </div>
 </BaseLayout>
