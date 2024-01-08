@@ -6,19 +6,12 @@ import me from "../assets/me.png";
 
 ---
 
-<style>
-    /* https://every-layout.dev/layouts/stack/#the-solution */
-    .stack > * + * {
-        margin-block-start: 1.5rem;
-    }
-</style>
-
 <BaseLayout pageTitle="Home">
     <h1>Welcome to my website!</h1>
 
-    <div class:list={["flex", "gap-4"]}>
-        <Image src={me} alt={"A picture of me"} width={200} class:list={""}></Image>
-        <div class="stack">
+    <div class="flex gap-4">
+        <Image src={me} alt={"A picture of me"} width={200}></Image>
+        <div class="flex flex-col gap-4">
             <p>
                 Hello! I'm Fisher, and I'm a CS student.
             </p>
@@ -26,6 +19,6 @@ import me from "../assets/me.png";
             <p>
                 I'm interested in backend development, package management, and functional programming.
             </p>
-        </div>
+        </dov>
     </div>
 </BaseLayout>
