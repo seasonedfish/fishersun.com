@@ -5,8 +5,19 @@ const allPosts = await getCollection("posts")
 ---
 
 <BaseLayout pageTitle="Blog">
-    <h1>Fisher's Blog</h1>
-    <ul>
-        {allPosts.map((post) => <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>)}
-    </ul>
+    <h1>Blog</h1>
+    
+    <table class="w-full">
+        {allPosts.map((post) =>
+            <tr>
+                <td>
+                    <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                </td>
+
+                <td class="text-right">
+                    {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
+                </td>
+            </tr>
+        )}
+    </table>
 </BaseLayout>
