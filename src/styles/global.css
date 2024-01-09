@@ -1,3 +1,17 @@
+/*
+Reasonable defaults not covered by Tailwind
+https://piccalil.li/blog/a-more-modern-css-reset/
+*/
+body {
+    min-height: 100vh;
+}
+button, input, label {
+    line-height: 1.1;
+}
+h1, h2, h3, h4 {
+    text-wrap: balance;
+}
+
 :root {
     background-color: #f1f5f9;
 }
@@ -10,7 +24,25 @@ body {
 }
 
 h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
     font-weight: bold;
+    @apply text-4xl;
+    @apply mt-4;
+}
+
+h2 {
+    font-weight: bold;
+    @apply text-2xl;
+    @apply mt-4;
+}
+
+h3 {
+    font-weight: bold;
+    @apply text-xl;
+    @apply mt-3;
+}
+
+h4 {
+    font-weight: bold;
+    @apply text-lg;
+    @apply mt-3;
 }
