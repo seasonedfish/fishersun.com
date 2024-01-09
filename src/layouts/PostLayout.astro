@@ -1,4 +1,5 @@
 ---
+import Article from "../components/Article.astro";
 import BaseLayout from "./BaseLayout.astro";
 interface Props {
     frontmatter: {
@@ -11,9 +12,7 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-    <article>
-        <h1>{frontmatter.title}</h1>
-
+    <Article title={frontmatter.title}>
         <div id="article-metadata">
             <span>{frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}</span>
         </div>
