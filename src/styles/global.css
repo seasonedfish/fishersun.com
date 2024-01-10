@@ -18,9 +18,3 @@ body {
     max-width: 60ch;
     padding: 1rem;
 }
-
-h1 {
-    font-weight: bold;
-    @apply text-4xl;
-    @apply mt-4;
-}
