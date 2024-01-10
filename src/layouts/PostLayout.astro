@@ -1,5 +1,6 @@
 ---
 import Article from "../components/Article.astro";
+import Prose from "../components/Prose.astro";
 import BaseLayout from "./BaseLayout.astro";
 interface Props {
     frontmatter: {
@@ -16,9 +17,11 @@ const { frontmatter } = Astro.props;
         <div id="article-metadata">
             <span>{frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}</span>
         </div>
-    
-        <div id="article-content" class="my-4">
-            <slot />
-        </div>
+        
+        <Prose>
+            <div id="article-content" class="my-4">
+                <slot />
+            </div>
+        </Prose>
     </article>
 </BaseLayout>
