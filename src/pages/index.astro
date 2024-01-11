@@ -3,32 +3,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from 'astro:assets';
 import me from "../assets/me.png";
 import Article from "../components/Article.astro";
+import Prose from "../components/Prose.astro";
 
 ---
 
 <BaseLayout pageTitle="Home">
     <Article title="Hello and welcome!">
-        <div class="flex gap-4 items-start flex-col min-[375px]:flex-row">
-            <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]}></Image>
-            <div class="space-y-4">
-                <p>
-                    I'm Fisher. I'm a CS student that loves learning about all things software and software engineering.
-                </p>
-    
-                <p>
-                    I'm most experienced with desktop app development and data analysis with Python.
-                    Recently, I've been getting into TypeScript for web apps and Rust for CLIs.
-                </p>
-            </div>
-        </div>
-        <div class="space-y-4 mt-4">
+        <Prose>
+            <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="float-start me-[2em]"}></Image>
+            <p>
+                I'm Fisher. I'm a CS student that loves learning about all things software and software engineering.
+            </p>
+
+            <p>
+                I'm most experienced with desktop app development and data analysis with Python.
+                Recently, I've been getting into TypeScript for web apps and Rust for CLIs.
+            </p>
+
             <hr>
+            
             <p>
                 On this website, you find <a href="/blog">my blog</a>, where from time to time I'll post articles about interesting things that I learned, or cool things that I worked on.
             </p>
             <p>
                 You'll also find <a href="/portfolio">my portfolio</a> (once I'm done making it).
             </p>
-        </div>
+        </Prose>
     </Article>
 </BaseLayout>
