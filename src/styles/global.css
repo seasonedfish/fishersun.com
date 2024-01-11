@@ -23,7 +23,7 @@ body {
     font-family: 'Alegreya Sans';
     font-style: normal;
     font-weight: 400;
-    font-display: swap;
+    size-adjust: 120%;
     src: url('/fonts/Alegreya-Sans-Regular.woff2') format('woff2'),
         url('/fonts/Alegreya-Sans-Regular.woff') format('woff');
 }
@@ -31,7 +31,7 @@ body {
     font-family: 'Alegreya Sans';
     font-style: italic;
     font-weight: 400;
-    font-display: swap;
+    size-adjust: 120%;
     src: url('/fonts/Alegreya-Sans-Italic.woff2') format('woff2'),
         url('/fonts/Alegreya-Sans-Italic.woff') format('woff');
 }
@@ -39,7 +39,7 @@ body {
     font-family: 'Alegreya Sans';
     font-style: normal;
     font-weight: 700;
-    font-display: swap;
+    size-adjust: 120%;
     src: url('/fonts/Alegreya-Sans-700.woff2') format('woff2'),
         url('/fonts/Alegreya-Sans-700.woff') format('woff');
 }

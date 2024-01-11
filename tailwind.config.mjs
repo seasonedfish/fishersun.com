@@ -1,5 +1,4 @@
 import defaultTheme from "tailwindcss/defaultTheme"
-import plugin from "tailwindcss/plugin"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -16,19 +15,10 @@ export default {
 			}
 		},
 		fontFamily: {
-			sans: ["Alegreya Sans", "Libre Franklin", ...defaultTheme.fontFamily.sans],
+			sans: ["Alegreya Sans", ...defaultTheme.fontFamily.sans],
 		},
 	},
 	plugins: [
 		require('@tailwindcss/typography'),
-		/*
-		Change the base font size because Alegreya is a bit smaller than the standard fonts (e.g. Arial)
-		https://design2tailwind.com/blog/change-tailwindcss-base-font-size/
-		 */
-		plugin(function({ addBase }) {
-			addBase({
-			   'html': {fontSize: "1.125rem" },
-			 })
-		   }),
 	],
 }
