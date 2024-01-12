@@ -5,6 +5,20 @@ import me from "../assets/me.png";
 import Article from "../components/Article.astro";
 import Prose from "../components/Prose.astro";
 
+const links = [
+    {
+        name: "GitHub",
+        href: "https://github.com/seasonedfish"
+    },
+    {
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/in/fisher-sun/"
+    },
+    {
+        name: "Email",
+        href: "mailto:f.sun@wustl.edu"
+    }
+]
 ---
 
 <BaseLayout pageTitle="Home">
@@ -28,6 +42,17 @@ import Prose from "../components/Prose.astro";
             <p>
                 You'll also find <a href="/portfolio">my portfolio</a> (once I'm done making it).
             </p>
+
+            <p>
+                Links:
+
+                <span class="flex gap-4">
+                    {
+                        links.map((link, i) => <a href={link.href}>{link.name}</a>)
+                    }
+                </span>
+            </p>
+
         </Prose>
     </Article>
 </BaseLayout>
