@@ -24,15 +24,18 @@ const links = [
 <BaseLayout pageTitle="Home">
     <Article title="Hello and welcome!">
         <Prose>
-            <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="float-start me-8 mb-8"}></Image>
-            <p>
-                I'm Fisher. I'm a CS student that loves learning about all things software and software engineering.
-            </p>
-
-            <p>
-                I'm most experienced with desktop app development and data analysis with Python.
-                Recently, I've been getting into TypeScript for web apps and Rust for CLIs.
-            </p>
+            <div>
+                <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="float-start me-8 mb-8 mt-0"}></Image>
+                <p>
+                    I'm Fisher. I'm a CS student that loves learning about all things software and software engineering.
+                </p>
+    
+                <ul class="flex flex-wrap gap-4 list-none p-0">
+                    {
+                        links.map((link, i) => <li><a href={link.href}>{link.name}</a></li>)
+                    }
+                </ul>
+            </div>
 
             <hr>
             
@@ -41,16 +44,6 @@ const links = [
             </p>
             <p>
                 You'll also find <a href="/portfolio">my portfolio</a> (once I'm done making it).
-            </p>
-
-            <p>
-                Links:
-
-                <span class="flex gap-4">
-                    {
-                        links.map((link, i) => <a href={link.href}>{link.name}</a>)
-                    }
-                </span>
             </p>
 
         </Prose>
