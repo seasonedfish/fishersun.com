@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
 <BaseLayout pageTitle={frontmatter.title}>
     <Article title={frontmatter.title}>
         <div id="article-metadata">
-            <span>{frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}</span>
+            <time datetime={frontmatter.pubDate.toISOString()}>{frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}</time>
         </div>
         
         <Prose>
