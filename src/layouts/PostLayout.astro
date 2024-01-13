@@ -7,6 +7,7 @@ interface Props {
         title: string;
         pubDate: Date;
         author: string;
+        tags: string[];
     };
 }
 
@@ -14,10 +15,16 @@ const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
     <Article title={frontmatter.title}>
-        <div id="post-metadata">
-            <time datetime={frontmatter.pubDate.toISOString()} class="text-gray-500">
+        <div id="post-metadata" class="text-gray-500 text-sm flex gap-2">
+            <time datetime={frontmatter.pubDate.toISOString()}>
                 {frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}
             </time>
+
+            <p>
+                {
+                    frontmatter.tags.join(", ")
+                }
+            </p>
         </div>
         
         <Prose>
