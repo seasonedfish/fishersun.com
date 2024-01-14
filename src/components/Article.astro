@@ -2,8 +2,10 @@
 /**
  * A generic article with a heading (use slot="heading") and content.
  */
+
+const { class: className, ...rest } = Astro.props;
 ---
-<article class="mt-5">
+<article class={className} {...rest}>
     <slot name="heading" />
 
     <div class="mt-5">
