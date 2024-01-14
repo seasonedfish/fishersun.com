@@ -1,14 +1,9 @@
 ---
-interface Props {
-    title: string;
-}
+import type { JSX } from "astro/jsx-runtime";
 
-const { title } = Astro.props;
 ---
-<article>
-    <h1 id="article-heading" class="text-4xl mt-5 font-bold">
-        {title}
-    </h1>
+<article class="mt-5">
+    <slot name="heading" />
 
     <div id="article-content" class="mt-5">
         <slot />

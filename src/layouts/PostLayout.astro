@@ -1,5 +1,6 @@
 ---
 import Article from "../components/Article.astro";
+import Heading from "../components/Heading.astro";
 import Prose from "../components/Prose.astro";
 import BaseLayout from "./BaseLayout.astro";
 interface Props {
@@ -14,17 +15,20 @@ interface Props {
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
-    <Article title={frontmatter.title}>
-        <div id="post-metadata" class="text-gray-500 text-sm flex gap-2">
-            <time datetime={frontmatter.pubDate.toISOString()}>
-                {frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}
-            </time>
-
-            <p>
-                {
-                    frontmatter.tags.join(", ")
-                }
-            </p>
+    <Article>
+        <div slot="heading">
+            <Heading>{frontmatter.title}</Heading>
+            <div id="post-metadata" class="text-gray-500 text-sm flex gap-2 mt-2">
+                <time datetime={frontmatter.pubDate.toISOString()}>
+                    {frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}
+                </time>
+    
+                <p>
+                    {
+                        frontmatter.tags.join(", ")
+                    }
+                </p>
+            </div>
         </div>
         
         <Prose>

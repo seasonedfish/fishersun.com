@@ -2,11 +2,13 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Article from "../../components/Article.astro";
+import Heading from "../../components/Heading.astro";
 const allPosts = await getCollection("posts")
 ---
 
 <BaseLayout pageTitle="Blog">
-    <Article title="My blog">
+    <Article>
+        <Heading slot="heading">My blog</Heading>
         <table class="w-full">
             {allPosts.map((post) =>
                 <tr>

@@ -1,9 +1,11 @@
 ---
 import Article from "../components/Article.astro";
+import Heading from "../components/Heading.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout pageTitle="Portfolio">
-    <Article title="My portfolio">
+    <Article>
+        <Heading slot="heading">My portfolio</Heading>
         <p>
             Currently under construction...
         </p>

@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import me from "../assets/me.png";
 import Article from "../components/Article.astro";
 import Prose from "../components/Prose.astro";
+import Heading from "../components/Heading.astro";
 
 const links = [
     {
@@ -22,7 +23,8 @@ const links = [
 ---
 
 <BaseLayout pageTitle="Home">
-    <Article title="Hello and welcome!">
+    <Article>
+        <Heading slot="heading">Hello and welcome!</Heading>
         <Prose>
             <div class="flex gap-4 items-start flex-col min-[375px]:flex-row border-s-gray-200">
                 <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="not-prose"></Image>
