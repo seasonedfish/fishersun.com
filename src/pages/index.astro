@@ -1,10 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from 'astro:assets';
 import me from "../assets/me.png";
-import Article from "../components/Article.astro";
 import Prose from "../components/Prose.astro";
-import Heading from "../components/Heading.astro";
+import ArticleLayout from "../layouts/ArticleLayout.astro";
 
 const links = [
     {
@@ -21,36 +19,32 @@ const links = [
     }
 ]
 ---
+<ArticleLayout pageTitle="Home" headingText="Hello and welcome!">
+    <Prose>
+        <div class="flex gap-4 items-start flex-col min-[375px]:flex-row border-s-gray-200">
+            <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="not-prose"></Image>
 
-<BaseLayout pageTitle="Home">
-    <Article>
-        <Heading slot="heading">Hello and welcome!</Heading>
-        <Prose>
-            <div class="flex gap-4 items-start flex-col min-[375px]:flex-row border-s-gray-200">
-                <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="not-prose"></Image>
-
-                <div>
-                    <p class="not-prose">
-                        My name is Fisher, and I'm a CS student that loves learning about all things software and software engineering.
-                    </p>
-        
-                    <ul class="flex flex-wrap gap-4 list-none p-0">
-                        {
-                            links.map((link, i) => <li class="p-0"><a href={link.href}>{link.name}</a></li>)
-                        }
-                    </ul>
-                </div>
+            <div>
+                <p class="not-prose">
+                    My name is Fisher, and I'm a CS student that loves learning about all things software and software engineering.
+                </p>
+    
+                <ul class="flex flex-wrap gap-4 list-none p-0">
+                    {
+                        links.map((link, i) => <li class="p-0"><a href={link.href}>{link.name}</a></li>)
+                    }
+                </ul>
             </div>
-            
-            <p>
-                On this website, you find <a href="/blog">my blog</a>, where from time to time I'll post articles about interesting things that I learned, or cool things that I worked on.
-            </p>
-            <p>
-                You'll also find <a href="/portfolio">my portfolio</a> (once I'm done making it).
-            </p>
-            <p>
-                Feel free to contact me if you see something that interests you! My email is f.sun@wustl.edu.
-            </p>
-        </Prose>
-    </Article>
-</BaseLayout>
+        </div>
+        
+        <p>
+            On this website, you find <a href="/blog">my blog</a>, where from time to time I'll post articles about interesting things that I learned, or cool things that I worked on.
+        </p>
+        <p>
+            You'll also find <a href="/portfolio">my portfolio</a> (once I'm done making it).
+        </p>
+        <p>
+            Feel free to contact me if you see something that interests you! My email is f.sun@wustl.edu.
+        </p>
+    </Prose>
+</ArticleLayout>

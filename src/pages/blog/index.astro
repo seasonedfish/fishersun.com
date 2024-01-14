@@ -1,26 +1,20 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Article from "../../components/Article.astro";
-import Heading from "../../components/Heading.astro";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
 const allPosts = await getCollection("posts")
 ---
+<ArticleLayout pageTitle="Blog" headingText="My blog">
+    <table class="w-full">
+        {allPosts.map((post) =>
+            <tr>
+                <td>
+                    <a href={`/blog/${post.slug}`} class="underline">{post.data.title}</a>
+                </td>
 
-<BaseLayout pageTitle="Blog">
-    <Article>
-        <Heading slot="heading">My blog</Heading>
-        <table class="w-full">
-            {allPosts.map((post) =>
-                <tr>
-                    <td>
-                        <a href={`/blog/${post.slug}`} class="underline">{post.data.title}</a>
-                    </td>
-    
-                    <td class="text-right">
-                        {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
-                    </td>
-                </tr>
-            )}
-        </table>
-    </Article>
-</BaseLayout>
+                <td class="text-right">
+                    {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
+                </td>
+            </tr>
+        )}
+    </table>
+</ArticleLayout>

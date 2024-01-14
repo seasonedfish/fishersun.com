@@ -1,0 +1,18 @@
+---
+import Article from "../components/Article.astro";
+import Heading from "../components/Heading.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+    pageTitle: string,
+    headingText: string
+}
+
+const { pageTitle, headingText } = Astro.props;
+---
+<BaseLayout pageTitle={pageTitle}>
+    <Article>
+        <Heading slot="heading">{headingText}</Heading>
+        <slot />
+    </Article>
+</BaseLayout>
