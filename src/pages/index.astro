@@ -21,7 +21,7 @@ const links = [
 ---
 <ArticleLayout pageTitle="Home" headingText="Hello and welcome!">
     <Prose>
-        <div class="flex gap-4 items-start flex-col min-[400px]:flex-row">
+        <div class="flex gap-5 items-start flex-col min-[400px]:flex-row">
             <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="not-prose"></Image>
 
             <div>
@@ -29,7 +29,7 @@ const links = [
                     My name is Fisher, and I'm a CS student that loves learning about all things software and software engineering.
                 </p>
     
-                <ul class="flex flex-wrap gap-4 list-none p-0">
+                <ul class="flex flex-wrap gap-4 list-none p-0 mb-0">
                     {
                         links.map((link, i) => <li class="p-0"><a href={link.href}>{link.name}</a></li>)
                     }
