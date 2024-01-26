@@ -1,24 +1,23 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-    name: string;
-    technologies: string;
-    description: string;
-    image?: ImageMetadata;
-    class?: string;
+    project: CollectionEntry<"projects">
+    class?: string
 }
 
-const { name, technologies, description, image, class: className, ...rest } = Astro.props;
+const { project, class: className, ...rest } = Astro.props;
+
+const { Content }  = await project.render()
 ---
 <div class={className} {...rest}>
     <h2 class="text-xl font-bold">
-        {name}
+        {project.data.name}
     </h2>
-    <p class="text-gray-600 text-sm">{technologies}</p>
-    {image && <Image src={image} alt={name} width={150} densities={[1, 1.5]} class="float-right"></Image>}
-    <p>
-        {description}
-    </p>
+    <p class="text-gray-600 text-sm">{project.data.technologies.join(", ")}</p>
+    {project.data.image && <Image src={project.data.image} alt={project.data.name} width={150} densities={[1, 1.5]} class="float-right"></Image>}
+    
+    <Content></Content>
 </div>

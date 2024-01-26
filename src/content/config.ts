@@ -1,3 +1,4 @@
+import type { ImageMetadata } from "astro"
 import { z, defineCollection } from "astro:content"
 
 const postsCollection = defineCollection({
@@ -11,6 +12,16 @@ const postsCollection = defineCollection({
     })
 })
 
+const projectsCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        name: z.string(),
+        technologies: z.array(z.string()),
+        image: z.optional(z.custom<ImageMetadata>())
+    })
+})
+
 export const collections = {
     posts: postsCollection,
+    projects: projectsCollection
 }

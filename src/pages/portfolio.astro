@@ -4,8 +4,9 @@ import Prose from "../components/Prose.astro";
 import ArticleLayout from "../layouts/ArticleLayout.astro";
 import me from "../assets/me.png"
 import PortfolioItem from "../components/PortfolioItem.astro";
+import { getCollection } from "astro:content";
 
-const projects = [
+const x = [
     {
         name: "Beatbuff",
         technologies: "TypeScript, Next.js, React, Prisma, MySQL, Knock, Chakra UI, Tailwind CSS, Oracle Cloud Infrastructure",
@@ -20,8 +21,9 @@ const projects = [
         name: "HDN (home.nix utility)",
         technologies: "Rust, Cargo, Nix, Home Manager",
         description: "I was using Home Manager to install my packages, but I found its workflow of manually editing the home.nix file (and manually reverting it if something went wrong) tedious. So, I used Rust to create a utility that handles adding packages, removing packages, and rolling back the home.nix file when Home Manager fails."
-    }
+    },
 ]
+const projects = await getCollection("projects")
 ---
 <ArticleLayout pageTitle="Portfolio" headingText="My portfolio">
     <p>
@@ -31,9 +33,7 @@ const projects = [
     <div>
     {projects.map((project) => (
         <PortfolioItem
-            name={project.name}
-            technologies={project.technologies}
-            description={project.description}
+            project={project}
             class="mt-5"
         />
     ))}
