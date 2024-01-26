@@ -1,5 +1,5 @@
 ---
-import type { ImageMetadata } from "astro";
+import Prose from "./Prose.astro"
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
@@ -16,8 +16,10 @@ const { Content }  = await project.render()
     <h2 class="text-xl font-bold">
         {project.data.name}
     </h2>
-    <p class="text-gray-600 text-sm">{project.data.technologies.join(", ")}</p>
+    <p class="text-gray-500 text-sm">{project.data.technologies.join(", ")}</p>
     {project.data.image && <Image src={project.data.image} alt={project.data.name} width={150} densities={[1, 1.5]} class="float-right"></Image>}
     
-    <Content></Content>
+    <Prose>
+        <Content />
+    </P>
 </div>
