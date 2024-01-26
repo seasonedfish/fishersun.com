@@ -3,8 +3,9 @@
  * A wrapper to render content as Tailwind prose.
  * https://docs.astro.build/en/recipes/tailwind-rendered-markdown/
  */
+ const {class: className, ...rest} = Astro.props;
 ---
 
-<div class="prose">
+<div class={`prose ${className}`} {...rest}>
     <slot />
 </div>
