@@ -16,7 +16,6 @@ const projectsCollection = defineCollection({
     type: "content",
     schema: z.object({
         name: z.string(),
-        technologies: z.array(z.string()),
         image: z.optional(z.custom<ImageMetadata>())
     })
 })

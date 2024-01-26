@@ -1,6 +1,5 @@
 ---
 name: DSC Designathon Website
-technologies: ["Rust", "Cargo", "Nix", "Home Manager"]
 ---
 Last year, my club, DSC WashU, hosted a designathon for students to redesign WebSTAC. I developed [the website](https://dscwashu.github.io/webstacdesignathon/) for the event.
 It shows the event information, lists resources for participants, and dynamically displays submissions.
