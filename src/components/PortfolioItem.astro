@@ -18,9 +18,7 @@ const { Content }  = await project.render()
     </h2>
     {project.data.image && <Image src={project.data.image} alt={project.data.name} width={150} densities={[1, 1.5]} class="float-right"></Image>}
     
-    <Prose class="text-justify">
+    <Prose>
         <Content />
     </Prose>
-
-    <p class="text-gray-500 text-sm ml-20 mt-2 text-end">{project.data.technologies.join(", ")}</p>
 </div>
