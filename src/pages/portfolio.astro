@@ -6,11 +6,11 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects")
 ---
 <ArticleLayout pageTitle="Portfolio" headingText="My portfolio">
-    <p>
-        (Under construction!)
+    <p class="prose">
+        Here are some personal/school projects I'm proud of!
+        If you want to see my work experience, check out <a href="https://seasonedfish.github.io/resume/yu-fisher-sun-resume.pdf">my resume</a>.
     </p>
-    
-    <div class="mt-5 space-y-10">
+    <div class="mt-10 space-y-10">
     {projects.map((project) => (
         <PortfolioItem
             project={project}
