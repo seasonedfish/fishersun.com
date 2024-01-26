@@ -8,7 +8,18 @@ import PortfolioItem from "../components/PortfolioItem.astro";
 const projects = [
     {
         name: "Beatbuff",
-        description: "test"
+        technologies: "TypeScript, Next.js, React, Prisma, MySQL, Knock, Chakra UI, Tailwind CSS, Oracle Cloud Infrastructure",
+        description: "Alongside Noah Cunningham Baker and Adam Kirsch, I built Beatbuff, a website for music album reviews. Users of the site can rate any album on Spotify, plus follow their friends to see what albums they recommend. There's also a notification system that allows users to see when they get a new follower and when someone comments on their reviews."
+    },
+    {
+        name: "CMake Independent Study",
+        technologies: "C++, CMake, Google Test, GitHub Pages",
+        description: "When I took CSE 332S at WashU (Object-Oriented Software Development Laboratory), I was frustrated that because I didn't own a Windows computer, I had to use the sluggish remote desktop to work on the course's C++ assignments. The next semester, I did an independent study to migrate the course studios and labs to CMake, allowing students to develop on any platform."
+    },
+    {
+        name: "HDN (home.nix utility)",
+        technologies: "Rust, Cargo, Nix, Home Manager",
+        description: "I was using Home Manager to install my packages, but I found its workflow of manually editing the home.nix file (and manually reverting it if something went wrong) tedious. So, I used Rust to create a utility that handles adding packages, removing packages, and rolling back the home.nix file when Home Manager fails."
     }
 ]
 ---
@@ -18,20 +29,12 @@ const projects = [
     </p>
     
     <div>
-        <h2 class="text-xl font-bold">
-            Beatbuff
-        </h2>
-        <p>TypeScript, Next.js, React, Prisma, MySQL, Knock, Chakra UI, Tailwind CSS, Oracle Cloud Infrastructure</p>
-        <Image src={me} alt={"The author"} width={150} densities={[1, 1.5]} class="float-right"></Image>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis, libero id pulvinar convallis, dolor diam posuere metus, et mattis urna augue et odio. Maecenas consectetur blandit malesuada. Nulla tristique risus et libero vehicula luctus. Pellentesque ac ante nec purus convallis eleifend id non tortor. Suspendisse in risus a dolor lobortis laoreet sed hendrerit est. Nam condimentum semper arcu. Donec vitae nunc vulputate, ullamcorper libero a, dignissim neque. Praesent vulputate scelerisque metus. Quisque ut maximus dolor. Nulla molestie turpis non sapien viverra eleifend. Suspendisse rhoncus mauris a nunc tincidunt vulputate. Nunc euismod finibus diam et auctor.
-        </p>
-    </div>
-
-    <PortfolioItem
-        name="CMake Independent Study"
-        technologies="C++, CMake, Google Test, GitHub Pages"
-        description="lorem ipsum"
-        class="mt-5"
-    />
+    {projects.map((project) => (
+        <PortfolioItem
+            name={project.name}
+            technologies={project.technologies}
+            description={project.description}
+            class="mt-5"
+        />
+    ))}
 </ArticleLayout>
