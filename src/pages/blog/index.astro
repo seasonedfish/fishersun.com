@@ -7,7 +7,7 @@ const allPosts = await getCollection("posts")
     <table class="w-full">
         {allPosts.map((post) =>
             <tr>
-                <td>
+                <td class="py-2">
                     <a href={`/blog/${post.slug}`} class="underline">{post.data.title}</a>
                 </td>
 
