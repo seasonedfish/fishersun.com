@@ -12,9 +12,15 @@ const projects = await getCollection("projects")
     </p>
     <div class="mt-10 space-y-10">
     {projects.map((project) => (
-        <PortfolioItem
-            project={project}
-        />
+
+        <div>
+            <hr />
+            <PortfolioItem
+                project={project}
+                class="mt-10"
+            />
+        </div>
+
     ))}
     </div>
 </ArticleLayout>
