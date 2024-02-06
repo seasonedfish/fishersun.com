@@ -5,33 +5,11 @@ description: ""
 author: "Fisher Sun"
 tags: [til, javascript, node]
 ---
-I had imagined that the first post I would write for this website would be introducing the technology behind it,
-but while I was working on it, I came across something that suprised me so much that I had to write a post on it,
-inspired by Simon Willison’s TILs.
+While developing this website, I wanted to write a little script to automate creating blog post frontmatter blocks.
+This would not be that useful, but I thought it would be good to get some practice using JavaScript for scripting,
+to learn how to use it to do all the stuff I usually do with Python.
 
-My static site generator allows me to write blog posts in Markdown;
-it converts it to HTML that browsers can display.
-
-In each post's file is a YAML block that contains the post's metadata, called the *frontmatter*.
-For example, here's the frontmatter of the post you're reading right now:
-```yaml
----
-title: 'TIL: ESM equivalent of if __name__ == "__main__"'
-pubDate: 2024-01-29T00:57:55.663Z
-description: ""
-author: "Fisher Sun"
-tags: []
----
-```
-
-This would be a bother to type each time I create a post.
-So, in classic software engineering fashion, I decided to write a program to do it for me.
-I thought it would be good to get some more practice with JavaScript anyway.
-
----
-
-Things were going well.
-Translating how I normally code in Python, I had a `main` function for all my code, which returned the program's exit code.
+Translating how I normally code in Python, my code ran from the `main` function, which returned the program's exit code.
 I called it at the bottom of the module.
 ```js
 /**
@@ -67,7 +45,7 @@ This file is being treated as an ES module because it has a '.js' file extension
 Since this approach uses a CJS `require`, it's not compatible with ESM, which my project uses by default.
 
 Renaming the file to use a `.cjs` extension and changing my `import`s to `require`s worked, but didn't seem ideal.
-I wondered, what is the ESM way?
+I wondered, what was the ESM way?
 
 With some more searching, I found a book, Shell Scripting with Node.js, that provided the following:
 ```js
@@ -81,13 +59,14 @@ if (import.meta.url.startsWith('file:')) { // (A)
 }
 ```
 
-There's no way.
+I couldn't believe how complex this was.
 
-If it had been just a single block of code, I could create some kind of snippet to quickly paste it.
-But, there's also an import, which should be moved to the top of the file.
+And, since there's an import, which would bother me at the bottom of the file,
+I couldn't simply create a snippet to quickly paste it.
 So if I start using this in scripts, it would quickly get annoying.
 
 I'm fairly new to Node, so I'm wondering what I'm missing.
 The pattern of `if __name__ == "__main__"` is commonly seen in Python, so why is there no simple way of doing it with ESM?
 Is ESM not as commonly adopted with Node as I thought? Or do people use ESM, but just switch to CJS for this kind of thing?
 Or maybe this Python pattern isn't commonly used in Node?
+Please let me know your thoughts!
