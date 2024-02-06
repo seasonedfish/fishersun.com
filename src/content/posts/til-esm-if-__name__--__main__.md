@@ -32,13 +32,13 @@ if (require.main === module) {
 }
 ```
 
-This looked clean, but running it with node gives me an error:
+This looked clean, but running it with node gave me an error:
 ```
 ReferenceError: require is not defined in ES module scope, you can use import instead
 This file is being treated as an ES module because it has a '.js' file extension and '/home/fisher/repos/blog-astro/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
 ```
 
-Since this approach uses a CJS `require`, it's not compatible with ESM, which my project uses by default.
+Since this approach used a CJS `require`, it wasn't compatible with ESM, which my project used by default.
 
 Renaming the file to use a `.cjs` extension and changing my `import`s to `require`s worked, but it didn't seem ideal.
 I wondered, what was the ESM way?
@@ -57,7 +57,7 @@ if (import.meta.url.startsWith('file:')) {
 
 I couldn't believe how complex this was.
 
-And, since there's an import, which would bother me at the bottom of the file,
+And, since there's an import (which would bother me at the bottom of the file),
 I couldn't simply create a snippet to paste it.
 So if I started using this in scripts, it would quickly get annoying.
 
