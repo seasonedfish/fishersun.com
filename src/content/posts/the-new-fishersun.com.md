@@ -6,11 +6,11 @@ author: "Fisher Sun"
 tags: [meta]
 ---
 
-Welcome to the new fishersun.com!
+Welcome to the new version of my website!
 
-I've decided to completely redo my website, migrating it from Jekyll to Astro.
+I've decided to completely rewrite it, migrating it from Jekyll to Astro.
+
 I'll explain more in a future post, but in the meantime, enjoy!
-
 I've added a [homepage](/), and I finally made a [portfolio](/portfolio).
 
 As for the blog, it's more bare-bones currently, but the plan is to have it show previews of the posts
