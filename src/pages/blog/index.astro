@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
-const allPosts = await getCollection("posts")
+const allPosts = (await getCollection("posts"))
+    .toSorted((a, b) => a.data.pubDate.toISOString().localeCompare(b.data.pubDate.toISOString()))
+    .toReversed()
 ---
 <ArticleLayout pageTitle="Blog" headingText="My blog">
     <table class="w-full border-separate border-spacing-y-2">
