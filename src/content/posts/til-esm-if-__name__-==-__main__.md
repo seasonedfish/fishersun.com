@@ -40,10 +40,10 @@ This file is being treated as an ES module because it has a '.js' file extension
 
 Since this approach uses a CJS `require`, it's not compatible with ESM, which my project uses by default.
 
-Renaming the file to use a `.cjs` extension and changing my `import`s to `require`s worked, but didn't seem ideal.
+Renaming the file to use a `.cjs` extension and changing my `import`s to `require`s worked, but it didn't seem ideal.
 I wondered, what was the ESM way?
 
-With some more searching, I found a book, Shell Scripting with Node.js, that got me this:
+With some more searching, I found a book, [Shell Scripting with Node.js](https://exploringjs.com/nodejs-shell-scripting/ch_nodejs-path.html#detecting-if-module-is-main), that got me this:
 ```js
 import * as url from 'node:url';
 
