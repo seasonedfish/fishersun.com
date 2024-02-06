@@ -3,6 +3,7 @@
  */
 
 import fs from "node:fs";
+import * as url from "node:url";
 
 /**
  * @param {string[]} args command-line arguments passed to the script
@@ -34,4 +35,9 @@ tags: []
     return 0;
 }
 
-process.exitCode = main(process.argv.slice(2));
+if (import.meta.url.startsWith("file:")) { // (A)
+    const modulePath = url.fileURLToPath(import.meta.url);
+    if (process.argv[1] === modulePath) { // (B)
+        process.exitCode = main(process.argv.slice(2));
+    }
+}
