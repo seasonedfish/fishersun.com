@@ -27,12 +27,8 @@ But, what about the trusty `if __name__ == "__main__"` that's so common in Pytho
 
 The first thing my search brought me to was [a Stack Overflow answer](https://stackoverflow.com/a/6090287/14106506) that recommended the following:
 ```js
-function myMain() {
-    // main code
-}
-
 if (require.main === module) {
-    myMain();
+    process.exitCode = main(process.argv.slice(2));
 }
 ```
 
@@ -47,13 +43,13 @@ Since this approach uses a CJS `require`, it's not compatible with ESM, which my
 Renaming the file to use a `.cjs` extension and changing my `import`s to `require`s worked, but didn't seem ideal.
 I wondered, what was the ESM way?
 
-With some more searching, I found a book, Shell Scripting with Node.js, that provided the following:
+With some more searching, I found a book, Shell Scripting with Node.js, that got me this:
 ```js
 import * as url from 'node:url';
 
-if (import.meta.url.startsWith('file:')) { // (A)
+if (import.meta.url.startsWith('file:')) {
     const modulePath = url.fileURLToPath(import.meta.url);
-    if (process.argv[1] === modulePath) { // (B)
+    if (process.argv[1] === modulePath) {
         process.exitCode = main(process.argv.slice(2));
     }
 }
