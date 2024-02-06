@@ -40,5 +40,9 @@ const { frontmatter } = Astro.props;
                 <slot />
             </div>
         </Prose>
+
+        <footer>
+            <a href="/blog" class="underline before:content-['←'] rtl:before:content-['→']">back to blog</a>
+        </footer>
     </Article>
 </BaseLayout>
