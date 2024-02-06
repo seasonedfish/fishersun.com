@@ -17,6 +17,7 @@ body {
     width: 100%;
     max-width: 60ch;
     padding: 1.25rem;
+    padding-bottom: 2.5rem;
 }
 
 @font-face {

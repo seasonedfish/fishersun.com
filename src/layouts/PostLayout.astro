@@ -42,7 +42,9 @@ const { frontmatter } = Astro.props;
         </Prose>
 
         <footer>
-            <a href="/blog" class="underline before:content-['←'] rtl:before:content-['→']">back to blog</a>
+            <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-gray-400">
+                <span>back to all posts</span>
+            </a>
         </footer>
     </Article>
 </BaseLayout>
