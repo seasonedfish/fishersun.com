@@ -1,12 +1,21 @@
 ---
 import { getCollection } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import Prose from "../../components/Prose.astro";
+
 const allPosts = (await getCollection("posts"))
     .toSorted((a, b) => a.data.pubDate.toISOString().localeCompare(b.data.pubDate.toISOString()))
     .toReversed()
 ---
 <ArticleLayout pageTitle="Blog" headingText="My blog">
-    <table class="w-full border-separate border-spacing-y-2">
+    <Prose>
+        <p>
+            Welcome to my blog! You can subscribe <a href="/blog/rss.xml">via RSS</a>.
+        </p>
+    </Prose>
+
+
+    <table class="w-full border-separate border-spacing-y-2 mt-5">
         {allPosts.map((post) =>
             <tr>
                 <td>
