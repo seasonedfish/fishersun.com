@@ -1,7 +1,7 @@
 ---
 title: "The new fishersun.com"
 pubDate: 2024-02-06T04:40:59.326Z
-description: ""
+description: "Introducing the new site, built on Astro"
 author: "Fisher Sun"
 tags: [meta]
 ---
