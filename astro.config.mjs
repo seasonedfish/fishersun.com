@@ -7,5 +7,6 @@ export default defineConfig({
   integrations: [tailwind()],
   markdown: {
     syntaxHighlight: "prism"
-  }
+  },
+  site: "https://www.fishersun.com"
 });
