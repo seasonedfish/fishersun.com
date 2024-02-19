@@ -24,11 +24,14 @@ It turned out, it was not the content that had different widths, but the *margin
 
 My blog page's margins were 341.018 px wide, while my post's margins were 332.732 px wide.
 
-I checked the other pages, and they all had margins widths of 332.732 px.
+I checked the other pages, and they all had margin widths of 332.732 px.
 The only one that was different was the blog page.
 
-What was different about my blog page? I looked at its source code, and saw nothing suspicious.
-Nonetheless, I started changing things, hoping that it was because of a mistake in my CSS somewhere.
+How was it possible that pages could have different margin widths for the same content width?
+This made no sense to me.
+
+And, what was wrong about my blog page? I looked at its source code, and saw nothing suspicious.
+Nonetheless, I started changing things, hoping that it was because of a CSS mistake somewhere.
 
 After about 40 minutes of that and no leads, I had to give up.
 I left the library and walked back to my apartment in shame.
@@ -39,7 +42,7 @@ After dinner, I showed my friend Andy this issue that was troubling me.
 
 ---
 
-Of course. I had only developed on my Mac, and since on Mac the scrollbar is drawn on top of the page, I had never had this problem.
+Of course! I had only developed on my Mac, and since on Mac the scrollbar is drawn on top of the page, I had never had this problem.
 
 But on Windows, the scrollbar is separate, so it pushes the content to the left.
 
