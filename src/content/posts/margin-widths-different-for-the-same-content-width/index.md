@@ -1,5 +1,5 @@
 ---
-title: "Margin widths are different for the same content width"
+title: "Margin widths different for the same content width"
 pubDate: 2024-02-19T21:13:02.302Z
 description: ""
 author: "Fisher Sun"
@@ -11,7 +11,7 @@ Until I realized, my content was shifting between pages.
 
 ![animation showing the shift](./shift.webp)
 
-Now that I know what the problem is, it seems quite obvious.
+Now that I know what the problem is, it seems so obvious.
 And if you, dear reader, have developed on Windows or Linux, you're probably shaking your head.
 But I had only done web dev on my Mac, so I was seriously confused.
 
@@ -30,7 +30,8 @@ The only one that was different was the blog page.
 What was different about my blog page? I looked at its source code, and saw nothing suspicious.
 Nonetheless, I started changing things, hoping that it was because of a mistake in my CSS somewhere.
 
-After about 40 minutes of that and no leads, I had to give up. I left the library and walked in shame back to my apartment.
+After about 40 minutes of that and no leads, I had to give up.
+I left the library and walked back to my apartment in shame.
 
 After dinner, I showed my friend Andy this issue that was troubling me.
 
@@ -50,6 +51,9 @@ html {
 }
 ```
 
+No more shift between pages!
+
+## Addendum: scrollbar-gutter
 Reading up more about this, I also found [this question on UX StackExchange](https://ux.stackexchange.com/questions/145259/should-scrollbars-be-integrated-into-the-viewport-width-when-content-differs) that discusses the problem.
 
 The answer brings up a fairly new CSS property, [scrollbar-gutter](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter).
