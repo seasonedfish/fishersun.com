@@ -2,6 +2,12 @@
 Reasonable defaults not covered by Tailwind
 https://piccalil.li/blog/a-more-modern-css-reset/
 */
+html {
+    /* Always show a scrollbar to prevent content shift
+    https://stackoverflow.com/a/7607206/ */
+    overflow-y: scroll;
+}
+
 body {
     min-height: 100vh;
 }
@@ -14,8 +20,7 @@ h1, h2, h3, h4 {
 
 body {
     margin: 0 auto;
-    width: 100%;
-    max-width: 60ch;
+    width: 60ch;
     padding: 1.25rem;
     padding-bottom: 2.5rem;
 }
