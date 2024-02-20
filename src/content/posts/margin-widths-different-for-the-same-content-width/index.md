@@ -5,7 +5,7 @@ description: ""
 author: "Fisher Sun"
 tags: []
 ---
-Yesterday, I guess I was feeling a little vain, so I was clicking around my own website, admiring my own work.
+Yesterday, I guess I was feeling a little vain, because I was clicking around my own website, admiring my own work.
 
 Until I realized, my content was shifting between pages.
 
