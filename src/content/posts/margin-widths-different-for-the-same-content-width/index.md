@@ -7,7 +7,7 @@ tags: []
 ---
 Yesterday, I guess I was feeling a little vain, because I was clicking around my own website, admiring my own work.
 
-Until I realized, my content was shifting between pages.
+And it was nice, until I realized, my content was shifting between pages.
 
 ![animation showing the shift](./shift.webp)
 
