@@ -36,7 +36,7 @@ Nonetheless, I started changing things, hoping that it was because of a CSS mist
 After about 40 minutes of that and no leads, I had to give up.
 I left the library and walked back to my apartment in shame.
 
-After dinner, I showed my friend Andy this issue that was troubling me.
+After dinner, I showed [my friend Andy](https://github.com/ajy25) this issue.
 
 "Oh," he said, "that's because of the scrollbar".
 
