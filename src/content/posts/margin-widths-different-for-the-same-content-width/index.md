@@ -57,9 +57,9 @@ html {
 No more shift between pages!
 
 ## Addendum: scrollbar-gutter
-Reading up more about this, I also found [this question on UX StackExchange](https://ux.stackexchange.com/questions/145259/should-scrollbars-be-integrated-into-the-viewport-width-when-content-differs) that discusses the problem.
+Reading up more about this, I also found [this question on UX StackExchange](https://ux.stackexchange.com/questions/145259/should-scrollbars-be-integrated-into-the-viewport-width-when-content-differs) that discussed the problem.
 
-The answer brings up a fairly new CSS property, [scrollbar-gutter](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter).
+The answer brought up a fairly new CSS property, [scrollbar-gutter](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter).
 
-I tried it, and it does fix the shift. But without drawing the scrollbar, it results in the margins looking uneven.
+I tried it, and it did fix the shift. But without drawing the scrollbar, it resulted in the margins looking uneven.
 So, I went with the older solution.
