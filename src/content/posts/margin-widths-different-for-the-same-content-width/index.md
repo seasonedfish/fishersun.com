@@ -42,11 +42,13 @@ After dinner, I showed [my friend Andy](https://github.com/ajy25) this issue.
 
 ---
 
-Of course! I had only developed on my Mac, and since on Mac the scrollbar is drawn on top of the page, I had never had this problem.
+Of course! I had only developed on my Mac, and since on Mac the scrollbar is displayed on top of the page, I had never had this problem.
 
-But on Windows, the scrollbar is separate, so it pushes the content to the left.
+But on Windows, the scrollbar is separate, so it shifts the content to the left.
 
-Looking up solutions for this, I found a [CSS snippet from StackOverflow](https://stackoverflow.com/a/7607206) that makes it so that a scrollbar is always displayed.
+My blog page didn't have enough content to make the browser to display a scrollbar, so its content was *unshifted* while the other pages' content were shifted.
+
+Looking up solutions for this, I found a [CSS snippet from StackOverflow](https://stackoverflow.com/a/7607206) that makes the browser always display a scrollbar.
 
 ```css
 html {
