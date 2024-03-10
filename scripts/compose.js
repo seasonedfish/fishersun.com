@@ -5,13 +5,15 @@
 import fs from "node:fs";
 import * as url from "node:url";
 
+const AUTHOR_NAME = "Fisher Sun";
+
 /**
  * @param {string[]} args command-line arguments passed to the script
  * @returns {number} the exit code
  */
 function main(args) {
-    const POSTS_DIRECTORY = "./src/content/posts";
-    if (!fs.existsSync(POSTS_DIRECTORY)) {
+    const postsDirectory = "./src/content/posts";
+    if (!fs.existsSync(postsDirectory)) {
         console.error("Could not find posts directory. Must run script in project root");
         return 1;
     }
@@ -24,14 +26,14 @@ function main(args) {
 
     const slug = title.toLowerCase().replace(/\s+/g, '-');
 
-    const directoryName = `${POSTS_DIRECTORY}/${slug}`;
+    const directoryName = `${postsDirectory}/${slug}`;
     fs.mkdirSync(directoryName);
 
     const contents = `---
 title: "${title}"
 pubDate: ${(new Date()).toISOString()}
 description: ""
-author: "Fisher Sun"
+author: "${AUTHOR_NAME}"
 tags: []
 ---
 `;
