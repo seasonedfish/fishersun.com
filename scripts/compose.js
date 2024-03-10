@@ -23,6 +23,10 @@ function main(args) {
     }
 
     const slug = title.toLowerCase().replace(/\s+/g, '-');
+
+    const directoryName = `${POSTS_DIRECTORY}/${slug}`;
+    fs.mkdirSync(directoryName);
+
     const contents = `---
 title: "${title}"
 pubDate: ${(new Date()).toISOString()}
@@ -31,7 +35,7 @@ author: "Fisher Sun"
 tags: []
 ---
 `;
-    fs.writeFileSync(`${POSTS_DIRECTORY}/${slug}.md`, contents);
+    fs.writeFileSync(`${directoryName}/index.md`, contents);
     return 0;
 }
 
