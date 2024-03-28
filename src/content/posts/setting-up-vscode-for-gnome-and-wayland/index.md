@@ -41,7 +41,7 @@ To make it use Wayland, make a copy of the `.desktop` file (this allows the conf
 ```
 cp /usr/share/applications/code.desktop ~/.local/share/applications/
 ```
-Edit `~/.local/share/applications/code.desktop` and modify Exec to add the flags `--enable-features=UseOzonePlatform` and  `--ozone-platform=wayland`. Mine looks like:
+Edit `~/.local/share/applications/code.desktop` and modify Exec to include the flags `--enable-features=UseOzonePlatform` and  `--ozone-platform=wayland`. Mine looks like:
 ```
 Exec=/usr/share/code/code --unity-launch --enable-features=UseOzonePlatform --ozone-platform=wayland %F
 ```
@@ -52,13 +52,13 @@ Relaunch VSCode, and you'll have crisp looking text.
 Here is the finished result after applying the above configuration.
 ![Image of VSCode before applying configuration](after.png)
 
-Much better!
+Ah, that's much better.
 
 ## Addendum: make it stop prompting for your password
 If your VSCode prompts for your password every time you launch it after restarting,
 [you can fix that by adding another flag](https://askubuntu.com/a/968149) to the Exec field of the `.desktop` file.
 
-Edit `~/.local/share/applications/code.desktop` again and modify Exec to add `--password-store=basic`. Mine now looks like:
+Edit `~/.local/share/applications/code.desktop` again and modify Exec to include `--password-store=basic`. Mine now looks like:
 ```
 Exec=/usr/share/code/code --unity-launch --enable-features=UseOzonePlatform --ozone-platform=wayland --password-store=basic %F
 ```
