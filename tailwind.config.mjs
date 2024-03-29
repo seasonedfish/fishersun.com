@@ -11,6 +11,20 @@ export default {
 				DEFAULT: {
 					css: {
 						lineHeight: 1.5,
+						code: {
+							backgroundColor: "#f5f5f5",
+							borderRadius: "3px",
+							padding: ".2rem",
+							fontWeight: "400",
+						},
+						// Remove backticks
+						// https://github.com/tailwindlabs/tailwindcss-typography/issues/18
+						"code::before": {
+							content: '""'
+						},
+						"code::after": {
+							content: '""'
+						},
 					},
 				},
 			}
