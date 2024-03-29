@@ -6,10 +6,11 @@ author: "Fisher Sun"
 tags: []
 ---
 
-If you install VSCode on Ubuntu 22, it'll look like this:
+If you install VSCode on Ubuntu 22 LTS, it'll look like this:
 
 ![Image of VSCode before applying configuration](before.png)
-There are several things that aren't ideal.
+
+Unfortunately, things don't Just Work (tm); VSCode has a few quirks with GNOME and Wayland.
 
 ## Making the title bar compact
 VSCode normally has an integrated title bar that includes the the window decorations, menubar, and search bar.
@@ -27,7 +28,7 @@ and the recommended workaround is to get the [Rounded Window Corners](https://ex
 With rounded corners, it almost looks perfect.
 However, the text is blurry.
 
-This is because it's running using X instead of Wayland.
+This is because it's using X11 instead of Wayland.
 To check, run `xlsclients` while VSCode is running:
 ```console
 fisher@pacific:~$ xlsclients
@@ -36,7 +37,7 @@ pacific  ibus-x11
 pacific  gnome-shell
 pacific  code
 ```
-If you see `code` in the output, VSCode is using X.
+If you see `code` in the output, VSCode is using X11.
 To make it use Wayland, make a copy of the `.desktop` file (this allows the configuration to [persist across updates](https://askubuntu.com/questions/861303/stop-apt-upgrade-from-replacing-desktop-file)):
 ```
 cp /usr/share/applications/code.desktop ~/.local/share/applications/
