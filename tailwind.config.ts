@@ -1,5 +1,6 @@
 import defaultTheme from "tailwindcss/defaultTheme"
 import typography from "@tailwindcss/typography"
+import type { PluginAPI } from "tailwindcss/types/config"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,14 +8,14 @@ export default {
 	theme: {
 		extend: {
 			// https://tailwindcss.com/docs/typography-plugin#customizing-the-css
-			typography: {
+			typography: (theme: PluginAPI["theme"]) => ({
 				DEFAULT: {
 					css: {
 						lineHeight: 1.5,
 						code: {
-							backgroundColor: "#f5f5f5",
+							backgroundColor: theme("colors.gray.200"),
 							borderRadius: "3px",
-							padding: ".2rem",
+							padding: ".1rem",
 							fontWeight: "400",
 						},
 						// Remove backticks
@@ -27,7 +28,7 @@ export default {
 						},
 					},
 				},
-			}
+			})
 		},
 		fontFamily: {
 			sans: ["Alegreya Sans", ...defaultTheme.fontFamily.sans],
