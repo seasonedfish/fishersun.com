@@ -3,7 +3,7 @@ title: "Margin widths different for the same content width"
 pubDate: 2024-02-19T21:13:02.302Z
 description: ""
 author: "Fisher Sun"
-tags: []
+tags: [til, web, css]
 ---
 Yesterday, I guess I was feeling a little vain, because I was clicking around my own website, admiring my own work.
 

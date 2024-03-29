@@ -3,7 +3,7 @@ title: "Setting up VSCode for GNOME and Wayland"
 pubDate: 2024-03-28T16:11:57.670Z
 description: ""
 author: "Fisher Sun"
-tags: []
+tags: [linux, tools]
 ---
 
 If you install VSCode on Ubuntu 22 LTS, it'll look like this:

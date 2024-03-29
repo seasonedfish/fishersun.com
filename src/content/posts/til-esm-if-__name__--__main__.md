@@ -3,7 +3,7 @@ title: 'TIL: ESM equivalent of if __name__ == "__main__"'
 pubDate: 2024-02-06T05:01:15.485Z
 description: "With ESM, how do you accomplish Python's if __name__ == \"__main__\"?"
 author: "Fisher Sun"
-tags: [til, javascript, node]
+tags: [til, web, javascript]
 ---
 While developing this website, I wanted to write a little script to automate creating blog post files and generating frontmatter blocks.
 This would not be that useful, but I thought it would be good to get some practice using JavaScript for scripting--
