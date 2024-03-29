@@ -11,18 +11,19 @@ If you install VSCode on Ubuntu 22 LTS, it'll look like this:
 ![Image of VSCode before applying configuration](before.png)
 
 Unfortunately, things don't Just Work (tm); VSCode has a few quirks with GNOME and Wayland.
+Here are the steps to fix them.
 
-## Making the title bar compact
-VSCode normally has an integrated title bar that includes the the window decorations, menubar, and search bar.
-But, on, GNOME, these elements are all placed in separate components by default, so you lose a lot of vertical screen real estate.
+## Restoring the integrated title bar
+On Windows and macOS, VSCode integrates its window decorations, menubar, and search bar into its title bar.
+But, on, Linux with GNOME, these elements are all placed in separate components by default, so you lose a lot of vertical screen real estate.
 
 To fix this, go to your VSCode settings and search for `titleBarStyle`. Change its value from `native` to `custom`.
 
 ## Adding rounded corners back
-Now, the title bar is compact, but it has sharp edges that look out of place in GNOME.
+Now, the integrated title bar is restored, but it has sharp edges that look out of place in GNOME.
 
-This is a known issue (VSCode [#153233](https://github.com/microsoft/vscode/issues/153233), electron [#33036](https://github.com/electron/electron/issues/33036)),
-and the recommended workaround is to get the [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/) GNOME extension.
+This is a known issue (VSCode [#153233](https://github.com/microsoft/vscode/issues/153233), electron [#33036](https://github.com/electron/electron/issues/33036)).
+The recommended workaround is to get the [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/) GNOME extension.
 
 ## Fixing blurry text
 With rounded corners, it almost looks perfect.
