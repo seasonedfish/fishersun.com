@@ -6,11 +6,19 @@ import { getCollection } from "astro:content";
 const projects = await getCollection("projects")
 ---
 <ArticleLayout pageTitle="Portfolio" headingText="My portfolio">
+    <style is:global>
+        #portfolio-container img {
+            float: right;
+            width: 50%;
+            margin: 0 0 1rem 1rem;
+        }
+    </style>
+
     <p class="prose">
         Here are some personal/school projects I'm proud of!
         If you want to see my work experience, check out <a href="https://seasonedfish.github.io/resume/yu-fisher-sun-resume.pdf">my resume</a>.
     </p>
-    <div class="mt-10 space-y-10">
+    <div class="mt-10 space-y-10" id="portfolio-container">
     {projects.map((project) => (
 
         <div>
