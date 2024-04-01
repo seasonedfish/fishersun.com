@@ -12,8 +12,8 @@ const { project, class: className, ...rest } = Astro.props;
 
 const { Content }  = await project.render()
 ---
-<style is:global>
-    .portfolio-item img {
+<style>
+    .portfolio-item :global(img) {
         float: right;
         width: 50%;
         margin: 0 0 1rem 1rem;
