@@ -18,11 +18,11 @@ const allPosts = (await getCollection("posts"))
     <table class="w-full border-separate border-spacing-y-2 mt-5">
         {allPosts.map((post) =>
             <tr>
-                <td>
+                <td class="align-top">
                     <a href={`/blog/${post.slug}`} class="underline">{post.data.title}</a>
                 </td>
 
-                <td class="text-end">
+                <td class="align-top text-end">
                     {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
                 </td>
             </tr>
