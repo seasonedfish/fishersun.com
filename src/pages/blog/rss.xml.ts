@@ -1,9 +1,10 @@
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
-import { getCollection } from "astro:content";
+import { getPostsInReverseChronologicalOrder } from "../../lib/utils";
 
 export async function GET(context: APIContext) {
-    const posts = await getCollection("posts");
+    const posts = await getPostsInReverseChronologicalOrder();
+    
     return rss({
         title: "Fisher's Blog",
         description: "Fisher's blog posts on programming",

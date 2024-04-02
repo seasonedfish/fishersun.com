@@ -1,11 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import ArticleLayout from "../../layouts/ArticleLayout.astro";
 import Prose from "../../components/Prose.astro";
+import { getPostsInReverseChronologicalOrder } from "../../lib/utils";
 
-const allPosts = (await getCollection("posts"))
-    .toSorted((a, b) => a.data.pubDate.toISOString().localeCompare(b.data.pubDate.toISOString()))
-    .toReversed()
+const allPosts = await getPostsInReverseChronologicalOrder();
 ---
 <ArticleLayout pageTitle="Blog" headingText="My blog">
     <Prose>
