@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import syntaxTheme from "./src/assets/syntax.json";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
