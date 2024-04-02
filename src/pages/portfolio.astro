@@ -13,8 +13,10 @@ const projects = await getCollection("projects")
     <div class="mt-10 space-y-10" id="portfolio-container">
         <style>
             .portfolio-item.alternate-image :global(img) {
-                float: left;
-                margin: 0 1rem 1rem 0;
+                @media screen(sm) {
+                    float: left;
+                    margin: 0 1rem 1rem 0;
+                }
             }
         </style>
 
