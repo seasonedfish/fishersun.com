@@ -1,8 +1,7 @@
+---
+const { class: className, ...rest } = Astro.props;
+---
 <style>
-    header {
-        display: flex;
-        justify-content: space-between;
-    }
 
     ul {
         list-style-type: none;
@@ -18,17 +17,20 @@
     }
 </style>
 
-<header class="uppercase text-gray-500 bg-gray-100 p-2">
-    <a href="/">Fisher Sun</a>
-    <nav>
-        <ul>
-            <li>
-                <a href="/blog">Blog</a>
-            </li>
+<header class={`uppercase text-gray-500 bg-gray-100 p-2 ${className}`} {...rest}>
+    <div class="flex justify-between max-w-[50ch] m-auto">
+        <a href="/">Fisher Sun</a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/blog">Blog</a>
+                </li>
+    
+                <li>
+                    <a href="/portfolio">Portfolio</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-            <li>
-                <a href="/portfolio">Portfolio</a>
-            </li>
-        </ul>
-    </nav>
 </header>

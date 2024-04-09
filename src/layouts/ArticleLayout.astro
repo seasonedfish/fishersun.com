@@ -15,7 +15,7 @@ interface Props {
 const { pageTitle, headingText } = Astro.props;
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <Article class="mt-5">
+    <Article class="">
         <Heading slot="heading">{headingText}</Heading>
         <slot />
     </Article>
