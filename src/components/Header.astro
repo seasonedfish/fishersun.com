@@ -2,7 +2,6 @@
 const { class: className, ...rest } = Astro.props;
 ---
 <style>
-
     ul {
         list-style-type: none;
         margin: 0;
@@ -11,14 +10,10 @@ const { class: className, ...rest } = Astro.props;
         justify-content: center;
         gap: 20px;
     }
-
-    li {
-
-    }
 </style>
 
-<header class={`uppercase text-gray-500 bg-gray-100 p-2 ${className}`} {...rest}>
-    <div class="flex justify-between max-w-[60ch] m-auto">
+<header class={`uppercase text-gray-500 bg-gray-100 ${className}`} {...rest}>
+    <div class="flex justify-between m-auto max-w-[60ch] p-2">
         <a href="/">Fisher Sun</a>
         <nav>
             <ul>
