@@ -1,0 +1,23 @@
+---
+import Image from "astro/components/Image.astro"
+import ArticleLayout from "../layouts/ArticleLayout.astro"
+import { validateLocaleAndSetLanguage } from "typescript"
+import lantau from "../assets/lantau.png"
+import Prose from "../components/Prose.astro"
+---
+<ArticleLayout pageTitle="404" headingText="404: Not found">
+    <Prose>
+        <p>
+            That resource doesn't exist, or was moved somewhere else.
+        </p>
+
+        <a href="/">Go to homepage</a>
+    
+        <hr>
+
+        <p>
+            To compensate, please enjoy this exclusive picture of the view off of Lantau Island, Hong Kong.
+        </p>
+        <Image src={lantau} alt="A view of the ocean. Islands can be seen in the distance." />
+    </Prose>
+</ArticleLayout>
