@@ -22,7 +22,7 @@ const { frontmatter } = Astro.props;
     <Article class="">
         <div slot="heading">
             <Heading>{frontmatter.title}</Heading>
-            <div id="post-metadata" class="text-gray-500 text-sm flex gap-2 mt-2">
+            <div id="post-metadata" class="text-neutral-500 text-sm flex gap-2 mt-2">
                 <time datetime={frontmatter.pubDate.toISOString()}>
                     {frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}
                 </time>
@@ -42,11 +42,11 @@ const { frontmatter } = Astro.props;
         </Prose>
 
         <footer class="mt-5 flex gap-4">
-            <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-gray-400">
+            <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-neutral-400">
                 <span>back to all posts</span>
             </a>
 
-            <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-gray-400">
+            <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-neutral-400">
                 <span>comment via email</span>
             </a>
         </footer>

@@ -13,7 +13,7 @@ export default {
 					css: {
 						lineHeight: 1.5,
 						code: {
-							backgroundColor: theme("colors.gray.100"),
+							backgroundColor: theme("colors.neutral.100"),
 							borderRadius: "3px",
 							padding: ".1rem",
 							fontWeight: "400",
