@@ -31,7 +31,7 @@ export default {
 			})
 		},
 		fontFamily: {
-			sans: ["Alegreya Sans", ...defaultTheme.fontFamily.sans],
+			sans: ["Andika", ...defaultTheme.fontFamily.sans],
 		},
 	},
 	plugins: [
