@@ -41,9 +41,13 @@ const { frontmatter } = Astro.props;
             </div>
         </Prose>
 
-        <footer class="mt-5">
+        <footer class="mt-5 flex gap-4">
             <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-gray-400">
                 <span>back to all posts</span>
+            </a>
+
+            <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-gray-400">
+                <span>comment via email</span>
             </a>
         </footer>
     </Article>
