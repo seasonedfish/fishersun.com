@@ -1,10 +1,10 @@
-import defaultTheme from "tailwindcss/defaultTheme"
-import typography from "@tailwindcss/typography"
-import type { PluginAPI } from "tailwindcss/types/config"
+import defaultTheme from "tailwindcss/defaultTheme";
+import typography from "@tailwindcss/typography";
+import type { PluginAPI } from "tailwindcss/types/config";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		extend: {
 			// https://tailwindcss.com/docs/typography-plugin#customizing-the-css
@@ -21,22 +21,20 @@ export default {
 						// Remove backticks
 						// https://github.com/tailwindlabs/tailwindcss-typography/issues/18
 						"code::before": {
-							content: '""'
+							content: '""',
 						},
 						"code::after": {
-							content: '""'
+							content: '""',
 						},
-						maxWidth: 'none',
+						maxWidth: "none",
 					},
 				},
-			})
+			}),
 		},
 		fontFamily: {
-			sans: ["Fira Sans", ...defaultTheme.fontFamily.sans],
-			heading: ["Bitter", ...defaultTheme.fontFamily.serif]
+			sans: ["FiraGO", ...defaultTheme.fontFamily.sans],
+			heading: ["Bitter", ...defaultTheme.fontFamily.serif],
 		},
 	},
-	plugins: [
-		typography,
-	],
-}
+	plugins: [typography],
+};

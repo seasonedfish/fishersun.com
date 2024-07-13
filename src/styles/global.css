@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
-
 /*
 Reasonable defaults not covered by Tailwind
 https://piccalil.li/blog/a-more-modern-css-reset/
@@ -30,27 +26,26 @@ body {
 }
 
 @font-face {
-    font-family: 'Alegreya Sans';
+    font-family: 'Bitter';
     font-style: normal;
-    font-weight: 400;
-    size-adjust: 120%;
-    src: url('/fonts/Alegreya-Sans-Regular.woff2') format('woff2'),
-        url('/fonts/Alegreya-Sans-Regular.woff') format('woff');
-}
-@font-face {
-    font-family: 'Alegreya Sans';
-    font-style: italic;
-    font-weight: 400;
-    size-adjust: 120%;
-    src: url('/fonts/Alegreya-Sans-Italic.woff2') format('woff2'),
-        url('/fonts/Alegreya-Sans-Italic.woff') format('woff');
-}
-@font-face {
-    font-family: 'Alegreya Sans';
-    font-style: normal;
-    font-weight: 700;
-    size-adjust: 120%;
-    src: url('/fonts/Alegreya-Sans-700.woff2') format('woff2'),
-        url('/fonts/Alegreya-Sans-700.woff') format('woff');
+    src: url('/fonts/Bitter[wght].woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/FiraGO-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FiraGO';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/FiraGO-Italic.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FiraGO';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/FiraGO-Bold') format('woff2');
+}
