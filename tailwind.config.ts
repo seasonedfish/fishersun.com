@@ -26,6 +26,7 @@ export default {
 						"code::after": {
 							content: '""'
 						},
+						maxWidth: 'none',
 					},
 				},
 			})
