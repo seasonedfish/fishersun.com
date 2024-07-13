@@ -6,8 +6,6 @@ html {
     /* Always show a scrollbar to prevent content shift
     https://stackoverflow.com/a/7607206/ */
     overflow-y: scroll;
-    font-variant-numeric: lining-nums;
-    font-feature-settings: "ss01" 1, "cv39" 1;
 }
 
 body {
