@@ -31,7 +31,8 @@ export default {
 			})
 		},
 		fontFamily: {
-			sans: ["Andika", ...defaultTheme.fontFamily.sans],
+			sans: ["Fira Sans", ...defaultTheme.fontFamily.sans],
+			heading: ["Source Serif Pro", ...defaultTheme.fontFamily.serif]
 		},
 	},
 	plugins: [
