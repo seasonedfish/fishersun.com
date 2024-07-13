@@ -33,7 +33,7 @@ export default {
 		},
 		fontFamily: {
 			sans: ["Fira Sans", ...defaultTheme.fontFamily.sans],
-			heading: ["Source Serif Pro", ...defaultTheme.fontFamily.serif]
+			heading: ["Caladea", ...defaultTheme.fontFamily.serif]
 		},
 	},
 	plugins: [
