@@ -4,7 +4,7 @@
  * Consists of an Article component whose heading includes a Heading component and post metadata.
  */
 import Article from "../components/Article.astro";
-import Heading from "../components/Heading.astro";
+import H1 from "../components/H1.astro";
 import Prose from "../components/Prose.astro";
 import BaseLayout from "./BaseLayout.astro";
 interface Props {
@@ -21,7 +21,7 @@ const { frontmatter } = Astro.props;
 <BaseLayout pageTitle={frontmatter.title}>
     <Article class="">
         <div slot="heading">
-            <Heading>{frontmatter.title}</Heading>
+            <H1>{frontmatter.title}</H1>
             <div id="post-metadata" class="text-neutral-500 text-sm flex gap-2 mt-2">
                 <time datetime={frontmatter.pubDate.toISOString()}>
                     {frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}
