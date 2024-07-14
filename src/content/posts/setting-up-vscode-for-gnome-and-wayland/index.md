@@ -29,7 +29,7 @@ The recommended workaround is to get the [Rounded Window Corners](https://extens
 With rounded corners, it almost looks perfect.
 However, the text is blurry.
 
-This is because it's using X11 instead of Wayland.
+This is because VSCode is using X11 instead of Wayland.
 To check, run `xlsclients` while VSCode is running:
 ```console
 fisher@pacific:~$ xlsclients
@@ -56,7 +56,7 @@ Here is the finished result after applying the above configuration.
 
 Ah, that's much better.
 
-## Addendum: make it stop prompting for your password
+## Addendum: making it stop prompting for your password
 If your VSCode prompts for your password every time you launch it after restarting,
 [you can fix that by adding another flag](https://askubuntu.com/a/968149) to the Exec field of the `.desktop` file.
 
