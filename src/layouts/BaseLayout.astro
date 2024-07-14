@@ -19,9 +19,9 @@ const { pageTitle } = Astro.props;
     {/* https://css-tricks.com/emoji-as-a-favicon/ */}
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
   </head>
-  <body class="">
+  <body class="m-auto max-w-[70ch] px-5">
     <SiteHeader class=""/>
-    <main class="px-5 max-w-[70ch] m-auto my-8">
+    <main class="my-8">
       <slot />
     </main>
     <SiteFooter />
