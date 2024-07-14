@@ -24,9 +24,10 @@ body {
 }
 
 @font-face {
-    font-family: 'Bitter';
+    font-family: 'Bitter Pro';
     font-style: normal;
-    src: url('/fonts/Bitter[wght].woff2') format('woff2');
+    font-weight: 600;
+    src: url('/fonts/BitterPro-SemiBold.woff2') format('woff2');
 }
 
 @font-face {

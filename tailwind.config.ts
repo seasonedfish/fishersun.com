@@ -33,7 +33,7 @@ export default {
 		},
 		fontFamily: {
 			sans: ["FiraGO", ...defaultTheme.fontFamily.sans],
-			heading: ["Bitter", ...defaultTheme.fontFamily.serif],
+			heading: ["Bitter Pro", ...defaultTheme.fontFamily.serif],
 		},
 	},
 	plugins: [typography],
