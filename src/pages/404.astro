@@ -1,10 +1,10 @@
 ---
 import Image from "astro/components/Image.astro"
-import ArticleLayout from "../layouts/ArticleLayout.astro"
+import GeneralPageLayout from "../layouts/GeneralPageLayout.astro"
 import lantau from "../assets/lantau.png"
 import Prose from "../components/Prose.astro"
 ---
-<ArticleLayout pageTitle="404" headingText="404: Not found">
+<GeneralPageLayout pageTitle="404" headingText="404: Not found">
     <Prose>
         <p>
             That resource doesn't exist, or was moved somewhere else.
@@ -19,4 +19,4 @@ import Prose from "../components/Prose.astro"
         </p>
         <Image src={lantau} alt="A view of the ocean from the top of a mountain. Forested hills are in the foreground. Islands are in the background." />
     </Prose>
-</ArticleLayout>
+</GeneralPageLayout>

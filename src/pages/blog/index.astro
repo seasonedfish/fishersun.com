@@ -1,11 +1,11 @@
 ---
-import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
 import Prose from "../../components/Prose.astro";
 import { getPostsInReverseChronologicalOrder } from "../../lib/utils";
 
 const allPosts = await getPostsInReverseChronologicalOrder();
 ---
-<ArticleLayout pageTitle="Blog" headingText="My blog">
+<GeneralPageLayout pageTitle="Blog" headingText="My blog">
     <Prose>
         <p>
             Welcome to my blog! You can subscribe <a href="/blog/rss.xml">via RSS</a>.
@@ -26,4 +26,4 @@ const allPosts = await getPostsInReverseChronologicalOrder();
             </tr>
         )}
     </table>
-</ArticleLayout>
+</GeneralPageLayout>
