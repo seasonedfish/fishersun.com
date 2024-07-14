@@ -20,7 +20,7 @@ const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
     <Article class="">
-        <div slot="heading">
+        <header slot="heading">
             <H1>{frontmatter.title}</H1>
             <div id="post-metadata" class="text-neutral-500 text-sm flex gap-2 mt-2">
                 <time datetime={frontmatter.pubDate.toISOString()}>
@@ -33,7 +33,7 @@ const { frontmatter } = Astro.props;
                     }
                 </p>
             </div>
-        </div>
+        </header>
         
         <Prose>
             <div id="post-content" class="my-4">
