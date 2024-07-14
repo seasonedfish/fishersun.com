@@ -46,5 +46,5 @@ body {
     font-family: 'FiraGO';
     font-style: normal;
     font-weight: 700;
-    src: url('/fonts/FiraGO-Bold') format('woff2');
+    src: url('/fonts/FiraGO-Bold.woff2') format('woff2');
 }
