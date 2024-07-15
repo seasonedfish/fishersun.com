@@ -6,6 +6,13 @@ html {
     /* Always show a scrollbar to prevent content shift
     https://stackoverflow.com/a/7607206/ */
     overflow-y: scroll;
+
+    /* Scale everything up (everything is based on rem) for large screen widths
+    https://stackoverflow.com/a/72763375/
+    https://stackoverflow.com/a/43131958/ */
+    @screen 2xl {
+        font-size: 125%;
+    }
 }
 
 body {
