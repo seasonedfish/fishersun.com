@@ -3,7 +3,7 @@ title: "Using a built-in binding that's shadowed"
 pubDate: 2024-08-10T02:12:48.075Z
 description: ""
 author: "Fisher Sun"
-tags: ["javascript"]
+tags: ["javascript", "til"]
 ---
 
 How do you use the built-in JavaScript Map in a module that already imports another Map?
