@@ -19,8 +19,16 @@ My first thought was to use an alias like this:
 import { List, Map as ImmutableMap, Set } from 'immutable';
 ```
 
-This would require changing all the existing usages of `Map` to `ImmutableMap`,
-so I wanted to think of other ways.
+Then, I could use both Maps:
+```typescript
+const immutableMap = ImmutableMap();
+const builtinMap = new Map(); 
+```
+
+This was simple, but I thought of a number of downsides.
+- It would require changing all the module's existing usages of `Map` to `ImmutableMap`.
+- If I wanted to be consistent, I would have to change `List` to `ImmutableList` and `Set` to `ImmutableSet` as well.
+- Developers working in the legacy code would be used to `Map` referring to the Immutable.js Map--they would not expect `Map` to refer to the built-in Map here.
 
 ## Approach 2: assignment before import
 I then wondered if I could assign `Map` to another name before the import:
@@ -28,8 +36,12 @@ I then wondered if I could assign `Map` to another name before the import:
 ```typescript
 const BuiltinMap = Map;
 import { List, Map, Set } from 'immutable';
+```
 
-const map = new BuiltInMap([['key', 'value']]);
+This would allow me to keep the Immutable.js Map as Map:
+```typescript
+const immutableMap = Map();
+const builtinMap = new BuiltInMap();
 ```
 
 But, this doesn't work:
@@ -48,10 +60,11 @@ so I resorted to asking an LLM.
 
 It pointed me to using [globalThis](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
 
-With `globalThis`, I could leave everything as-is and use the built-in Map this way:
+With `globalThis`, I could leave the imports as-is and use both Maps like this:
 
 ```typescript
-const map = new globalThis.Map([['key', 'value']]);
+const immutableMap = Map();
+const builtinMap = new globalThis.Map();
 ```
 
 But, how does this work?
