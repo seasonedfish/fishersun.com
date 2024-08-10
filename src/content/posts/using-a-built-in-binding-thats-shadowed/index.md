@@ -55,7 +55,7 @@ It pointed me to using [globalThis](https://developer.mozilla.org/en-US/docs/Web
 With `globalThis`, I could leave everything as-is and use the built-in Map this way:
 
 ```typescript
-const map = new globalThis.Map();
+const map = new globalThis.Map([['key', 'value']]);
 ```
 
 But, how does this work?
