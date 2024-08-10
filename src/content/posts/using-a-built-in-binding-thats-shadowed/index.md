@@ -6,15 +6,11 @@ author: "Fisher Sun"
 tags: ["javascript", "til"]
 ---
 
-How do you use the built-in JavaScript Map in a module that already imports another Map?
-I had this question today and didn't find a clear source on it, so I'll write about my findings.
+The other day, I was getting TypeScript errors when I tried to use a built-in Map in some legacy code.
+It turns out, the module had imported the Immutable.js Map,
+so trying to create a built-in Map with `new Map()` would create an Immutable.js Map instead.
 
-I was working in legacy code where we used Immutable.js.
-The module imported the Immutable.js Map like this:
-
-```typescript
-import { List, Map, Set } from 'immutable';
-```
+How could I keep the existing usages of the Immutable.js Map and use the built-in Map at the same time?
 
 ## Approach 1: using an alias
 My first thought was to use an alias like this:
