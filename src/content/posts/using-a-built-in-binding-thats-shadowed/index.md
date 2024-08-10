@@ -7,8 +7,10 @@ tags: ["javascript", "til"]
 ---
 
 The other day, I was getting TypeScript errors when I tried to use a built-in Map in some legacy code.
-It turns out, the module had imported the Immutable.js Map,
-so trying to create a built-in Map with `new Map()` would create an Immutable.js Map instead.
+It turns out, the module had imported the Immutable.js Map, shadowing the built-in one.
+
+(Trying to create a built-in Map with `new Map()` would error because Map would refer to the Immutable.js Map [factory function](https://github.com/immutable-js/immutable-js/blob/0c2d021552ee74022863f33ff3704f44c4862fde/type-definitions/immutable.d.ts#L813-L814),
+and `new` cannot be used with it.)
 
 How could I keep the existing usages of the Immutable.js Map and use the built-in Map at the same time?
 
@@ -45,7 +47,7 @@ const builtinMap = new BuiltInMap();
 ```
 
 But, this doesn't work:
-it still creates an Immutable.js Map instead of a built-in Map.
+`BuiltInMap` ends up referring to the Immutable.js Map.
 
 I remembered reading about hoisting in JavaScript and suspected that hoisting was the cause of this.
 Sure enough, after a quick search, I learned that [imports are hoisted in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#hoisting).
