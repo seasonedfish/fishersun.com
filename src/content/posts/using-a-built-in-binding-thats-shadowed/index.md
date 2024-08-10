@@ -62,6 +62,7 @@ But, how does this work?
 How is it that both the built-in Map and the Immutable.js Map are available at the top level,
 but `globalThis.Map` refers to the built-in Map?
 
+This [Stack Overflow answer](https://stackoverflow.com/a/50470191/14106506) helped clear things up for me.
 It turns out, while the Map from Immutable.js gets imported to the *module scope*,
 the built-in Map remains untouched at the *global scope*.
 
