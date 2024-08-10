@@ -6,7 +6,7 @@ author: "Fisher Sun"
 tags: ["javascript"]
 ---
 
-How do you use the built-in JavaScript Map in a module that already imports another Map from a library?
+How do you use the built-in JavaScript Map in a module that already imports another Map?
 I had this question today and didn't find a clear source on it, so I'll write about my findings.
 
 I was working in legacy code where we used Immutable.js.
