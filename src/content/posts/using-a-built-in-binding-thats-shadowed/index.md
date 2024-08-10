@@ -46,8 +46,9 @@ const builtinMap = new BuiltInMap();
 But, this doesn't work:
 `BuiltInMap` ends up referring to the Immutable.js Map.
 
-I remembered reading about hoisting in JavaScript and suspected that hoisting was the cause of this.
-Sure enough, after a quick search, I learned that [imports are hoisted in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#hoisting).
+I remembered reading about hoisting in JavaScript and suspected that it was at play here.
+
+Sure enough, after a quick search, I learned that [imports are hoisted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#hoisting).
 So, in this code, `Map` is already shadowed when I try to assign it to `BuiltinMap`.
 
 ## Approach 3: globalThis
