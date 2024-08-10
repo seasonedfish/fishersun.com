@@ -73,6 +73,8 @@ Since `globalThis` accesses the global scope, it gets the built-in Map.
 Between this and the other working approach (using an alias),
 I like this approach better.
 
-Strangely enough, I couldn't find any posts describing this technique.
+Strangely enough, I couldn't find any writing that describes using `globalThis` in this way.
+While the Python docs for `builtins` talks about accessing shadowed bindings as its primary use case,
+the MDN docs for `globalThis` makes no mention of it.
 Is `globalThis` the best way to access a shadowed binding?
 Let me know your thoughts!
