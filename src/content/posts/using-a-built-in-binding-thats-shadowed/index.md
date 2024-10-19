@@ -77,13 +77,29 @@ the built-in Map remains untouched at the *global scope*.
 
 Since `globalThis` accesses the global scope, it gets the built-in Map.
 
-<hr>
-
-Between this and the other working approach (using an alias),
-I like this approach better.
-
 Strangely enough, I couldn't find any writing that describes using `globalThis` in this way.
 While the Python docs for `builtins` talk about accessing shadowed bindings as its primary use case,
 the MDN docs for `globalThis` make no mention of it.
 Is `globalThis` the best way to access a shadowed binding?
-Let me know your thoughts!
+
+## Update: re-exporting the built-in Map
+After publishing this post, I received a comment that pointed out that that if we use the global scope,
+`Map` can be redefined to something else in a different module, potentially leading to unexpected behavior or security risks.
+
+I thought of about the problem some more, and I came up with a better way.
+We can re-export `Map` from a `builtins.ts` module: this way we keep using the module scope and avoid the global scope.
+
+```typescript
+// builtins.ts
+export let BuiltinMap = Map;
+```
+
+```typescript
+// back in our main code
+import { BuiltinMap } from "./builtins";
+
+const immutableMap = Map();
+const builtinMap = new BuiltinMap();
+```
+
+I feel better about this solution than the previous ones. What do you think?
