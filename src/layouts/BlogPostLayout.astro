@@ -40,21 +40,21 @@ const { frontmatter } = Astro.props;
                 <slot />
             </div>
         </Prose>
-
-        <footer class={`text-neutral-900 bg-[#d2ccb1a5] border-t-4 border-[#a8a38da5] mt-12`}>
-            <div class="flex justify-between m-auto max-w-[70ch] px-5 py-3">
+        
+        <footer class="mt-12">
+            <div class="text-neutral-900 bg-[#d2ccb1a5] border-t-4 border-[#a8a38da5]  px-5 py-3">
                 <p class="">I'm looking for work! Feel free to contact me if I seem like a good fit.</p>
             </div>
-        </footer>
 
-        <footer class="mt-4 flex gap-4">
-            <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-neutral-400">
-                <span>back to all posts</span>
-            </a>
-
-            <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-neutral-400">
-                <span>comment</span>
-            </a>
+            <nav class="mt-4 flex gap-4">
+                <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-neutral-400">
+                    <span>back to all posts</span>
+                </a>
+    
+                <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-neutral-400">
+                    <span>comment</span>
+                </a>
+            </nav>
         </footer>
-    </Article>
+    </Article >
 </BaseLayout>
