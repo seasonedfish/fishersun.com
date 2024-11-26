@@ -40,10 +40,18 @@ const { frontmatter } = Astro.props;
                 <slot />
             </div>
         </Prose>
-        
+
         <footer class="mt-12">
-            <div class="text-neutral-900 bg-[#d2ccb1a5] border-t-4 border-[#a8a38da5]  px-5 py-3">
-                <p class="">I'm looking for work! Feel free to contact me if I seem like a good fit.</p>
+            <div class="bg-[#d2ccb1a5] border-t-4 border-[#a8a38da5]  px-5 py-3">
+                <p class="prose prose-neutral">
+                    I'm looking for work!
+                    Feel free to contact me if I seem like a good fit.
+                    
+                    
+                </p>
+                <p class="prose prose-neutral">
+                    My email is <a href="mailto:f.sun@wustl.edu">f.sun@wustl.edu</a>.
+                </p>
             </div>
 
             <nav class="mt-4 flex gap-4">
