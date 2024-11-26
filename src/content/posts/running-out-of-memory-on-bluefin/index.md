@@ -6,7 +6,7 @@ author: "Fisher Sun"
 tags: [linux]
 ---
 
-Last month, I found my laptop constantly freezing.
+Last month, I found my laptop running [Bluefin](https://projectbluefin.io/) constantly freezing.
 These freezes weren't minor one-second freezes: the entire OS would lock up, and waiting did nothing.
 Every time it happened, I would have to hold the power button to trigger a force-shut down.
 
@@ -17,8 +17,10 @@ I would often have dozens of tabs open when I worked on my Mac,
 and most of the time, I would have no problem.
 True, sometimes, the OS would prompt me to close something because it was close to running out of memory, but it would never completely freeze up.
 
-I remembered reading somewhere that the Linux <abbr title="out-of-memory killer">OOM killer</abbr>, the process that kills processes when the OS is out of memory,
-doesn't like to kill processes unless it has absolutely no choice.
+## Finding a killer that's not so hesitant to do its job
+I remembered reading somewhere that the Linux <a href="https://wizardzines.com/comics/oom-killer/">OOM killer</a>
+(the kernel mechanism that kills processes when the OS is out of memory)
+doesn't like to kill processes unless it has absolutely no choice, leading to systems staying unresponsive for long periods of time.
 I remembered that there existed a project called [earlyoom](https://github.com/rfjakob/earlyoom) that sought to implement a more eager OOM killer.
 
 Ah yes, it's in the Fedora repos. I installed it with:
@@ -38,7 +40,7 @@ I then started the earlyoom service with:
 sudo systemctl enable --now earlyoom
 ```
 
-<hr>
+## Facing my fears
 
 Having earlyoom improved things somewhat: my system would no longer grind to a complete halt.
 However, earlyoom would kill Firefox too quickly--when I opened 20 or so tabs, or equivalently, after five minutes of browsing.
@@ -103,7 +105,7 @@ mv noble-google-chrome.desktop google-chrome.desktop
 gtk-update-icon-cache
 ```
 
-<hr>
+## Finishing touches
 
 Finally, I made some tweaks to Chrome to make it more usable.
 These are things Firefox gets right out of the box, but they're easily fixable for Chrome.
@@ -124,7 +126,7 @@ For example, the first `Exec` field became:
 Exec=/usr/bin/distrobox-enter  -n noble  --   /usr/bin/google-chrome-stable --enable-features=TouchpadOverscrollHistoryNavigation  %U
 ```
 
-<hr>
+## Conclusion
 
 With earlyoom and Chrome up and running, I finally have a usable Bluefin system.
 I hope that by documenting the steps I took, this post will be helpful for other Bluefin users struggling with running out of memory.
