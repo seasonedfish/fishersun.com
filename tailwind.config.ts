@@ -18,13 +18,20 @@ export default {
 							padding: ".1rem",
 							fontWeight: "400",
 						},
-						// Remove backticks
+						// Remove backticks from inline code
 						// https://github.com/tailwindlabs/tailwindcss-typography/issues/18
 						"code::before": {
 							content: '""',
 						},
 						"code::after": {
 							content: '""',
+						},
+						// Remove quotes from blockquote
+						// https://github.com/tailwindlabs/tailwindcss-typography/issues/66#issuecomment-1754429609
+						"blockquote p:first-of-type::before": false,
+						"blockquote p:first-of-type::after": false,
+						"blockquote": {
+							fontStyle: "normal",
 						},
 						maxWidth: "none",
 					},

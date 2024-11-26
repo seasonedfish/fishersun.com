@@ -6,6 +6,6 @@
  const {class: className, ...rest} = Astro.props;
 ---
 
-<div class={`prose prose-neutral prose-headings:font-heading prose-headings:font-[600] ${className}`} {...rest}>
+<div class={`prose prose-neutral prose-headings:font-heading prose-headings:font-[600] prose-blockquote:text-neutral-500 ${className}`} {...rest}>
     <slot />
 </div>
