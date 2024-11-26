@@ -12,10 +12,9 @@ Every time it happened, I would have to hold the power button to trigger a force
 
 This should not have been happening: I had equipped my Framework laptop with 16 GB of RAM.
 This was twice the amount that my Mac had.
-So, I expected it to be able handle having dozens of tabs open.[^1]
-I would often have dozens of tabs open when I worked on my Mac,
-and most of the time, I would have no problem.
-True, sometimes, the OS would prompt me to close something because it was close to running out of memory, but it would never completely freeze up.
+So, I expected it to be able to handle having dozens of tabs open,
+as I would often have dozens of tabs open when I worked on my Mac with no issues.
+(True, sometimes, the OS would prompt me to close something because it was close to running out of memory, but it would never completely freeze up.)
 
 ## Finding a killer that's not so hesitant to do its job
 I remembered reading somewhere that the Linux <a href="https://wizardzines.com/comics/oom-killer/">OOM killer</a>
