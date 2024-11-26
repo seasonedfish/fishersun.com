@@ -20,7 +20,7 @@ const allPosts = await getPostsInReverseChronologicalOrder();
                     <a href={`/blog/${post.slug}`} class="underline">{post.data.title}</a>
                 </td>
 
-                <td class="align-top text-end">
+                <td class="align-top text-end font-mono">
                     {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
                 </td>
             </tr>

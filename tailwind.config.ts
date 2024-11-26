@@ -41,6 +41,7 @@ export default {
 		fontFamily: {
 			sans: ["FiraGO", ...defaultTheme.fontFamily.sans],
 			heading: ["Bitter Pro", ...defaultTheme.fontFamily.serif],
+			mono: [...defaultTheme.fontFamily.mono]
 		},
 	},
 	plugins: [typography],
