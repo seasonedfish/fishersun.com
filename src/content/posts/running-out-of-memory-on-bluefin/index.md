@@ -13,7 +13,7 @@ Every time it happened, I would have to hold the power button to trigger a force
 This should not have been happening: I had equipped my Framework laptop with 16 GB of RAM.
 This was twice the amount that my Mac had.
 So, I expected it to be able to handle having dozens of tabs open,
-as I would often have dozens of tabs open when I worked on my Mac with no issues [^1].
+as I would often have dozens of tabs open when I worked on my Mac with no issues[^1].
 (True, sometimes, the OS would prompt me to close something because it was close to running out of memory, but it would never completely freeze up.)
 
 ## Finding a killer that's not so hesitant to do its job
