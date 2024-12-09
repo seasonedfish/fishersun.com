@@ -51,7 +51,7 @@ void println(std::format_string<Args...> fmt, Args &&... args) {
 }
 ```
 1. Based on this [other StackOverflow answer](https://stackoverflow.com/a/73357333/14106506).
-2. Flush `cout` on every new line, [just like Java](https://stackoverflow.com/a/7166357/14106506). 
+2. Flush `cout` on every new line, [just like Java's System.out.println](https://stackoverflow.com/a/7166357/14106506). 
 
 This worked! In my `main.cpp`, I could now do
 ```c++
