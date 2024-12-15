@@ -1,7 +1,9 @@
+---
 The syntax theme was modified from https://github.com/rpbritton/zenbones.vscode,
 which is licensed under the MIT license.
 The MIT license is provided below.
 ---
+
 MIT License
 
 Copyright (c) 2022 Ryan Britton
