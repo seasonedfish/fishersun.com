@@ -40,14 +40,14 @@ and implemented them like so:
 
 template<class... Args>
 void print(std::format_string<Args...> fmt, Args &&... args) {
-    static std::ostream_iterator<char> out(std::cout); // (1)
+    static std::ostream_iterator<char> out(std::cout);
     std::format_to(out, fmt, args...);
 }
 
 template<class... Args>
 void println(std::format_string<Args...> fmt, Args &&... args) {
     print(fmt, args...);
-    std::cout << std::endl; // (2)
+    std::cout << std::endl;
 }
 ```
 1. Based on this [other StackOverflow answer](https://stackoverflow.com/a/73357333/14106506).
