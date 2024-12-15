@@ -1,4 +1,4 @@
-The syntax theme was taken from https://github.com/rpbritton/zenbones.vscode,
+The syntax theme was modified from https://github.com/rpbritton/zenbones.vscode,
 which is licensed under the MIT license.
 The MIT license is provided below.
 ---
