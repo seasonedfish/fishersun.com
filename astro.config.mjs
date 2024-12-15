@@ -3,8 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
 import expressiveCode from "astro-expressive-code";
-import nushu from "./src/assets/syntax.json"
-import zenbones from "./src/assets/zenbones_light_default.json"
+import syntaxTheme from "./src/assets/syntax.json"
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +11,7 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     expressiveCode({
-      themes: [zenbones],
+      themes: [syntaxTheme],
       frames: {
         extractFileNameFromCode: false,
       },
