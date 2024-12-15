@@ -29,9 +29,8 @@ rpm-ostree install -A earlyoom
 This uses [Local Layering](https://docs.projectbluefin.io/administration#enabling-local-layering), which as of the time of writing (2024), is enabled by default in Bluefin.
 However, it is set to be disabled in the future, so I manually enabled it:
 ```
-sudoedit /etc/rpm-ostreed.conf
-```
-```
+# /etc/rpm-ostreed.conf
+# rest of file omitted for brevity
 LockLayering=false
 ```
 I then started the earlyoom service with:
@@ -121,7 +120,7 @@ To fix this, I edited `~/.local/share/applications/google-chrome.desktop` and ad
 --enable-features=TouchpadOverscrollHistoryNavigation
 ```
 For example, the first `Exec` field became:
-```
+```txt
 Exec=/usr/bin/distrobox-enter  -n noble  --   /usr/bin/google-chrome-stable --enable-features=TouchpadOverscrollHistoryNavigation  %U
 ```
 

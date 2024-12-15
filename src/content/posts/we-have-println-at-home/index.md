@@ -33,7 +33,7 @@ Maybe I could just implement `print` and `println` myself.
 I copied the signatures of `print` and `println` from [cppreference](https://en.cppreference.com/w/cpp/io/print)
 and implemented them like so:
 
-```c++
+```c++ {"1":7-8} {"2":14}
 #include <format>
 #include <iostream>
 #include <iterator>

@@ -39,7 +39,7 @@ int main() {
 }
 ```
 When you run the executable, you'll see that the build errors! You'll get a message like:
-```
+```txt wrap
 CMake Error: Output CMakeFiles/demo.dir/carrot.ixx.o provides the `carrot` module but it is not found in a `FILE_SET` of type `CXX_MODULES`
 ```
 Even though we had CLion add our file to the CMake build target, CMake isn't satisfied.

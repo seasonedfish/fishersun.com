@@ -33,7 +33,7 @@ if (require.main === module) {
 ```
 
 This looked clean, but running it with node gave me an error:
-```
+```txt wrap
 ReferenceError: require is not defined in ES module scope, you can use import instead
 This file is being treated as an ES module because it has a '.js' file extension and '/home/fisher/repos/blog-astro/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
 ```
