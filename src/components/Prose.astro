@@ -5,6 +5,12 @@
  */
  const {class: className, ...rest} = Astro.props;
 ---
+<style is:global>
+    .prose .expressive-code {
+        margin-top: 1.25em;
+        margin-bottom: 1.25em;
+    }
+</style>
 
 <div class={`prose prose-neutral prose-headings:font-heading prose-headings:font-[600] prose-blockquote:text-neutral-500 ${className}`} {...rest}>
     <slot />
