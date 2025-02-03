@@ -86,7 +86,7 @@ Is `globalThis` the best way to access a shadowed binding?
 After publishing this post, I received a comment that pointed out that that if we use the global scope,
 `Map` can be redefined to something else in a different module, potentially leading to unexpected behavior or security risks.
 
-I thought of about the problem some more, and I came up with a better way.
+I thought about the problem some more, and I came up with a better way.
 We can re-export `Map` from a `builtins.ts` module: this way we keep using the module scope and avoid the global scope.
 
 ```typescript
