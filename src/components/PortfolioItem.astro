@@ -36,14 +36,14 @@ const { Content }  = await render(project);
                 {project.data.repo
                     ? <a href={project.data.repo}>
                         {/* @ts-ignore Experimental SVG */}
-                        <GitHub />
+                        <GitHub title="GitHub" />
                     </a> 
                     : ""
                 }
                 {project.data.website
                     ? <a href={project.data.website}>
                         {/* @ts-ignore Experimental SVG */}
-                        <Globe />
+                        <Globe title="Website" />
                     </a> 
                     : ""
                 }
