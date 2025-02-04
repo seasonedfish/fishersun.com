@@ -24,5 +24,8 @@ export default defineConfig({
       }
     })
   ],
+  experimental: {
+    svg: true,
+  },
   site: "https://www.fishersun.com"
 });
