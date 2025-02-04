@@ -3,7 +3,8 @@ import GeneralPageLayout from "../layouts/GeneralPageLayout.astro";
 import PortfolioItem from "../components/PortfolioItem.astro";
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("projects")
+const projects = (await getCollection("projects"))
+    .toSorted((a, b) => a.slug.localeCompare(b.slug))
 ---
 <GeneralPageLayout pageTitle="Portfolio" headingText="My portfolio">
     <p class="prose">

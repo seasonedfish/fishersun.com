@@ -27,5 +27,8 @@ export default defineConfig({
   experimental: {
     svg: true,
   },
+  legacy: {
+    collections: true,
+  },
   site: "https://www.fishersun.com"
 });
