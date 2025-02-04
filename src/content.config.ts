@@ -1,4 +1,3 @@
-import type { ImageMetadata } from "astro"
 import { z, defineCollection } from "astro:content"
 import { glob } from "astro/loaders"
 
@@ -19,7 +18,6 @@ const projectsCollection = defineCollection({
         name: z.string(),
         repo: z.optional(z.string().url()),
         website: z.optional(z.string().url()),
-        image: z.optional(z.custom<ImageMetadata>())
     })
 })
 
