@@ -17,7 +17,7 @@ const allPosts = await getPostsInReverseChronologicalOrder();
         {allPosts.map((post) =>
             <tr>
                 <td class="align-top">
-                    <a href={`/blog/${post.slug}`} class="underline">{post.data.title}</a>
+                    <a href={`/blog/${post.id}`} class="underline">{post.data.title}</a>
                 </td>
 
                 <td class="align-top text-end font-mono">

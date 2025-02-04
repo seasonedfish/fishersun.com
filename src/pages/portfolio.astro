@@ -4,7 +4,7 @@ import PortfolioItem from "../components/PortfolioItem.astro";
 import { getCollection } from "astro:content";
 
 const projects = (await getCollection("projects"))
-    .toSorted((a, b) => a.slug.localeCompare(b.slug))
+    .toSorted((a, b) => a.id.localeCompare(b.id))
 ---
 <GeneralPageLayout pageTitle="Portfolio" headingText="My portfolio">
     <p class="prose">

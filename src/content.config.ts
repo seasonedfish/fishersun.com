@@ -1,8 +1,9 @@
 import type { ImageMetadata } from "astro"
 import { z, defineCollection } from "astro:content"
+import { glob } from "astro/loaders"
 
 const postsCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/posts" }),
     schema: z.object({
         title: z.string(),
         pubDate: z.date(),
@@ -13,7 +14,7 @@ const postsCollection = defineCollection({
 })
 
 const projectsCollection = defineCollection({
-    type: "content",
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "./src/content/projects" }),
     schema: z.object({
         name: z.string(),
         repo: z.optional(z.string().url()),

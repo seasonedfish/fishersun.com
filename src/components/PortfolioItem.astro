@@ -1,6 +1,6 @@
 ---
 import Prose from "./Prose.astro"
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 import Globe from "../assets/globe.svg";
 import GitHub from "../assets/github.svg";
 
@@ -11,7 +11,7 @@ interface Props {
 
 const { project, class: className, ...rest } = Astro.props;
 
-const { Content }  = await project.render()
+const { Content }  = await render(project);
 ---
 <style>
     .portfolio-item :global(img) {
