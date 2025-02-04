@@ -1,5 +1,7 @@
 ---
 name: DSC Designathon Website
+repo: https://github.com/dscwashu/webstacdesignathon
+website: https://dscwashu.github.io/webstacdesignathon/
 ---
 
 ![The homepage of the designathon website. There is a button to register and information about the event.](image.png)

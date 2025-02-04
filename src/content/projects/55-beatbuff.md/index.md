@@ -1,5 +1,6 @@
 ---
 name: "Beatbuff"
+repo: https://github.com/seasonedfish/beatbuff
 ---
 ![An example album on Beatbuff. There is information about the album and reviews.](image.png)
 

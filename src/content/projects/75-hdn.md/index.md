@@ -1,5 +1,6 @@
 ---
 name: "HDN (home.nix utility)"
+repo: https://github.com/seasonedfish/hdn
 ---
 ![The command-line output of HDN. There is a diff of the home.nix file and the output of a home-manager invocation.](image.png)
 
