@@ -1,0 +1,10 @@
+---
+/**
+ * Container for horizontally constraining content.
+ * Usage inspired by https://github.com/markhorn-dev/astro-nano/
+ */
+const { class: className, ...rest } = Astro.props;
+---
+<div class=`px-5 max-w-[70ch] m-auto ${className}` {...rest}>
+    <slot />
+</div>

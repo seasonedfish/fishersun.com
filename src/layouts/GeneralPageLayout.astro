@@ -4,6 +4,7 @@
  * Its heading is just an H1 component.
  */
 import Article from "../components/Article.astro";
+import Container from "../components/Container.astro";
 import H1 from "../components/H1.astro";
 import BaseLayout from "./BaseLayout.astro";
 
@@ -15,8 +16,10 @@ interface Props {
 const { pageTitle, headingText } = Astro.props;
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <Article class="">
-        <H1 slot="heading">{headingText}</H1>
-        <slot />
-    </Article>
+    <Container class="my-8">
+        <Article class="">
+            <H1 slot="heading">{headingText}</H1>
+            <slot />
+        </Article>
+    </Container>
 </BaseLayout>

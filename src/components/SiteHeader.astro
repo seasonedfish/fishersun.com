@@ -1,4 +1,6 @@
 ---
+import Container from "./Container.astro";
+
 const { class: className, ...rest } = Astro.props;
 ---
 <style>
@@ -13,19 +15,20 @@ const { class: className, ...rest } = Astro.props;
 </style>
 
 <header class={`text-neutral-900 bg-[#b1c7d2] border-t-4 border-[#628da5] ${className}`} {...rest}>
-    <div class="flex justify-between m-auto max-w-[70ch] px-5 py-3">
-        <a href="/" class="text-lg">Fisher Sun 🎣</a>
-        <nav class="underline text-lg">
-            <ul>
-                <li>
-                    <a href="/blog">Blog</a>
-                </li>
-    
-                <li>
-                    <a href="/portfolio">Portfolio</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
+    <Container>
+        <div class="flex justify-between py-3">
+            <a href="/" class="text-lg">Fisher Sun 🎣</a>
+            <nav class="underline text-lg">
+                <ul>
+                    <li>
+                        <a href="/blog">Blog</a>
+                    </li>
+        
+                    <li>
+                        <a href="/portfolio">Portfolio</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </Container>
 </header>
