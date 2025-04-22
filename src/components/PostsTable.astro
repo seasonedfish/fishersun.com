@@ -2,14 +2,15 @@
 import { getCollection } from "astro:content";
 
 interface Props {
-    posts: Awaited<ReturnType<typeof getCollection<"posts">>>;
+    posts: Awaited<ReturnType<typeof getCollection<"posts">>>
+    class?: string
 }
 
-const { posts } = Astro.props;
+const { posts, class: className, ...rest } = Astro.props;
     
 ---
 
-<table class="w-full border-separate border-spacing-y-2 mt-5">
+<table class=`w-full border-separate border-spacing-y-2 ${className}` {...rest}>
     {posts.map((post) =>
         <tr>
             <td class="align-top">

@@ -22,5 +22,5 @@ const allPostsWithTag = await getCollection("posts", (post) =>
 ---
 
 <GeneralPageLayout pageTitle=`Tag: "${tag}"` headingText={`Posts tagged with "${tag}"`}>
-    <PostsTable posts={allPostsWithTag} />
+    <PostsTable posts={allPostsWithTag} class="mt-5" />
 </GeneralPageLayout>
