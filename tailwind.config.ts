@@ -39,6 +39,8 @@ export default {
 			}),
 		},
 		fontFamily: {
+			sans: [...defaultTheme.fontFamily.sans],
+			heading: ["Bitter Pro", ...defaultTheme.fontFamily.serif],
 			mono: [...defaultTheme.fontFamily.mono]
 		},
 	},
