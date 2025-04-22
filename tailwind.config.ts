@@ -39,7 +39,7 @@ export default {
 			}),
 		},
 		fontFamily: {
-			sans: [...defaultTheme.fontFamily.sans],
+			sans: ["Inter", "Adwaita Sans", "BlinkMacSystemFont", "Helvetica Neue", "Helvetica", "Arial", "Roboto", "sans-serif"],
 			heading: ["Bitter Pro", ...defaultTheme.fontFamily.serif],
 			mono: [...defaultTheme.fontFamily.mono]
 		},
