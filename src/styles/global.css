@@ -14,22 +14,3 @@ body {
     font-weight: 600;
     src: url('/fonts/BitterPro-SemiBold.woff2') format('woff2');
 }
-
-@font-face {
-    font-family: 'FiraGO';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/fonts/FiraGO-Regular.woff2') format('woff2');
-}
-@font-face {
-    font-family: 'FiraGO';
-    font-style: italic;
-    font-weight: 400;
-    src: url('/fonts/FiraGO-Italic.woff2') format('woff2');
-}
-@font-face {
-    font-family: 'FiraGO';
-    font-style: normal;
-    font-weight: 700;
-    src: url('/fonts/FiraGO-Bold.woff2') format('woff2');
-}
