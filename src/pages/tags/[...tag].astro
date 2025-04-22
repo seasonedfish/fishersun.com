@@ -1,0 +1,42 @@
+---
+const { tag } = Astro.params;
+
+import { getCollection } from "astro:content";
+import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
+
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+  return [...new Set(posts.map((p) => p.data.tags).flat())].map(
+    (t) => ({
+      params: { tag: t },
+    }),
+  );
+}
+
+const allPostsWithTag = await getCollection("posts", (post) =>
+  post.data.tags.some((t) => t === tag),
+);
+
+---
+
+<GeneralPageLayout pageTitle=`Posts tagged with ${tag}` headingText={`Posts tagged with ${tag}`}>
+    <p class="text-neutral-500">
+        {allPostsWithTag.length} post{allPostsWithTag.length === 1 ? "" : "s"} tagged with {tag}.
+    </p>
+
+    <table class="w-full border-separate border-spacing-y-2 mt-5">
+        {allPostsWithTag.map((post) =>
+            <tr>
+                <td class="align-top">
+                    <a href={`/blog/${post.id}`} class="underline">{post.data.title}</a>
+                </td>
+
+                <td class="align-top text-end font-mono">
+                    {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
+                </td>
+            </tr>
+        )}
+    </table>
+  
+</GeneralPageLayout>
