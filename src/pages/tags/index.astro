@@ -7,7 +7,7 @@ const counts = await getTagCounts();
 ---
 <GeneralPageLayout pageTitle="Tags" headingText="Tags">
     <ul class="mt-5 flex flex-wrap gap-4 gap-y-2 list-none">
-        {Array.from(counts).map(([tag, count]) => (
+        {counts.map(([tag, count]) => (
             <li>
                 <a href={`/tags/${tag}`} class="underline">{tag} × {count}</a>
             </li>

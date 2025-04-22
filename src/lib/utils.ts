@@ -6,6 +6,9 @@ export async function getPostsInReverseChronologicalOrder() {
         .toReversed();
 }
 
+/**
+ * Returns an array of all tags used in the posts.
+ */
 export async function getTags() {
     const posts = await getCollection("posts");
     const tags = new Set<string>();
@@ -17,6 +20,9 @@ export async function getTags() {
     return Array.from(tags);
 }
 
+/**
+ * Returns an array of tuples of [tag, count] sorted by count in descending order.
+ */
 export async function getTagCounts() {
     const posts = await getCollection("posts");
     const counts = new Map<string, number>();
@@ -29,5 +35,5 @@ export async function getTagCounts() {
             }
         }
     }
-    return counts;
+    return Array.from(counts.entries()).toSorted((a, b) => b[1] - a[1]);
 }
