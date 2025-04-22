@@ -3,7 +3,7 @@ title: "We have println at home"
 pubDate: 2024-12-08T22:07:01.799Z
 description: "C++23-style print() and println() in a few lines of C++20"
 author: "Fisher Sun"
-tags: [cxx]
+tags: [c++]
 ---
 While working through [Crafting Interpreters](https://craftinginterpreters.com/) in C++, I wanted to explore as many modern C++ features as I could.
 One of the features I was the most hyped for was `print` and `println`.
