@@ -4,15 +4,13 @@ const { tag } = Astro.params;
 import { getCollection } from "astro:content";
 import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
 import PostsTable from "../../components/PostsTable.astro";
+import { getTags } from "../../lib/utils";
 
 
 export async function getStaticPaths() {
-  const posts = await getCollection("posts");
-  return [...new Set(posts.map((p) => p.data.tags).flat())].map(
-    (t) => ({
-      params: { tag: t },
-    }),
-  );
+  return (await getTags()).map((t) => ({
+    params: { tag: t },
+  }));
 }
 
 const allPostsWithTag = await getCollection("posts", (post) =>
