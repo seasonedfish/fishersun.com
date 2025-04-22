@@ -65,6 +65,6 @@ Changing this resulted in the build succeeding.
 
 Doing a [code search](https://github.com/search?type=code&q=astro%2Fcomponents%2FImage.astro) on the direct import statement shows hundreds of repos that make the same mistake.
 
-![](search.png)
+![GitHub code search of the problematic import statement, showing 1.9k code matches](search.png)
 
 I suspect that many people will be affected by this when they upgrade their sites from v4 to v5. Thus, I wrote this blog post; I hope it's helpful to people that get tripped up by this in the future.
