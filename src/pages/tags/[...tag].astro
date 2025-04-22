@@ -3,6 +3,7 @@ const { tag } = Astro.params;
 
 import { getCollection } from "astro:content";
 import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
+import PostsTable from "../../components/PostsTable.astro";
 
 
 export async function getStaticPaths() {
@@ -25,18 +26,6 @@ const allPostsWithTag = await getCollection("posts", (post) =>
         {allPostsWithTag.length} post{allPostsWithTag.length === 1 ? "" : "s"} tagged with <code>bugfix</code>.
     </p>
 
-    <table class="w-full border-separate border-spacing-y-2 mt-5">
-        {allPostsWithTag.map((post) =>
-            <tr>
-                <td class="align-top">
-                    <a href={`/blog/${post.id}`} class="underline">{post.data.title}</a>
-                </td>
-
-                <td class="align-top text-end font-mono">
-                    {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
-                </td>
-            </tr>
-        )}
-    </table>
+    <PostsTable posts={allPostsWithTag} />
   
 </GeneralPageLayout>
