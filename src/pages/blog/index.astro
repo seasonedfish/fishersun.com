@@ -2,6 +2,7 @@
 import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
 import Prose from "../../components/Prose.astro";
 import { getPostsInReverseChronologicalOrder } from "../../lib/utils";
+import PostsTable from "../../components/PostsTable.astro";
 
 const allPosts = await getPostsInReverseChronologicalOrder();
 ---
@@ -13,17 +14,5 @@ const allPosts = await getPostsInReverseChronologicalOrder();
     </Prose>
 
 
-    <table class="w-full border-separate border-spacing-y-2 mt-5">
-        {allPosts.map((post) =>
-            <tr>
-                <td class="align-top">
-                    <a href={`/blog/${post.id}`} class="underline">{post.data.title}</a>
-                </td>
-
-                <td class="align-top text-end font-mono">
-                    {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
-                </td>
-            </tr>
-        )}
-    </table>
+    <PostsTable posts={allPosts} class="mt-5" />
 </GeneralPageLayout>

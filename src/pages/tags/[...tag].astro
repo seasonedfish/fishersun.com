@@ -1,0 +1,23 @@
+---
+const { tag } = Astro.params;
+
+import { getCollection } from "astro:content";
+import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
+import PostsTable from "../../components/PostsTable.astro";
+import { getPostsInReverseChronologicalOrder, getTags } from "../../lib/utils";
+
+
+export async function getStaticPaths() {
+  return (await getTags()).map((t) => ({
+    params: { tag: t },
+  }));
+}
+
+const allPostsWithTag = (await getPostsInReverseChronologicalOrder())
+  .filter((post) => post.data.tags.some((t) => t === tag));
+
+---
+
+<GeneralPageLayout pageTitle=`Tag: "${tag}"` headingText={`Posts tagged with "${tag}"`}>
+    <PostsTable posts={allPostsWithTag} class="mt-5" />
+</GeneralPageLayout>

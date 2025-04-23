@@ -3,7 +3,7 @@ title: "C++20 Modules with CLion and CMake"
 pubDate: 2024-12-08T20:41:05.686Z
 description: ""
 author: "Fisher Sun"
-tags: [cxx]
+tags: [c++]
 ---
 I've been working through [Crafting Interpreters](https://craftinginterpreters.com/) in C++20, so I tried out using the new modules.
 There were a couple of unintuitive things with using modules with CLion and CMake, so I'll document them here so that it may help future me (and maybe other people too).

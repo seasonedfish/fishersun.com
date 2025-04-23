@@ -24,14 +24,16 @@ const { frontmatter } = Astro.props;
         <Article class="">
             <header slot="heading">
                 <H1>{frontmatter.title}</H1>
-                <div id="post-metadata" class="text-neutral-500 text-sm flex gap-2 mt-2">
+                <div id="post-metadata" class="text-neutral-500 text-sm flex gap-2 mt-4">
                     <time datetime={frontmatter.pubDate.toISOString()}>
                         {frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}
                     </time>
         
                     <p>
                         {
-                            frontmatter.tags.join(", ")
+                            frontmatter.tags
+                                .map((t) => <a href={`/tags/${t}`} class="underline">{t}</a>)
+                                .reduce((prev, curr) => [prev, ", ", curr])
                         }
                     </p>
                 </div>
