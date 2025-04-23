@@ -3,23 +3,15 @@ import Container from "./Container.astro";
 
 const { class: className, ...rest } = Astro.props;
 ---
-<style>
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-</style>
 
 <header class={`text-neutral-700 ${className}`} {...rest}>
     <Container>
-        <div class="flex justify-between py-3">
-            <a href="/" class="text-lg">Fisher Sun 🎣</a>
-            <nav class="underline text-lg">
-                <ul>
+        <div class="">
+            <div>
+                <a href="/" class="text-3xl font-heading">Fisher Sun 🎣</a>
+            </div>
+            <nav class="mt-1">
+                <ul class="flex flex-row list-none gap-4 underline">
                     <li>
                         <a href="/blog">Blog</a>
                     </li>

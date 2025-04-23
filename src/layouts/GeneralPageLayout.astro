@@ -16,7 +16,7 @@ interface Props {
 const { pageTitle, headingText } = Astro.props;
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <Container class="my-8">
+    <Container class="my-10">
         <Article class="">
             <H1 slot="heading">{headingText}</H1>
             <slot />
