@@ -29,7 +29,7 @@ const relatedPosts = await getRelatedPosts(entry, 3);
                     <time datetime={frontmatter.pubDate.toISOString()}>
                         {frontmatter.pubDate.toLocaleDateString("en-us", {month: "long", day: "numeric", year: "numeric"})}
                     </time>
-        
+
                     <p>
                         {
                             frontmatter.tags
@@ -39,34 +39,24 @@ const relatedPosts = await getRelatedPosts(entry, 3);
                     </p>
                 </div>
             </header>
-            
+
             <Prose>
                 <div id="post-content" class="my-4">
                     <slot />
                 </div>
             </Prose>
-    
+
             <footer class="mt-12">
-                <div class="bg-[#f9f4dc] border-t-4 border-[#ecdc93]  px-5 py-3">
-                    <p class="prose prose-neutral">
-                        I'm looking for work!
-                        Please contact me if I seem like a good fit.
-                    </p>
-                    <p class="prose prose-neutral">
-                        My email is <a href="mailto:f.sun@wustl.edu">f.sun@wustl.edu</a>.
-                    </p>
-                </div>
-    
                 <nav class="mt-4 flex gap-4">
                     <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-neutral-500">
                         <span>back to all posts</span>
                     </a>
-        
+
                     <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-neutral-500">
                         <span>comment</span>
                     </a>
                 </nav>
-                
+
                 {relatedPosts.length > 0 && (
                     <div class="mt-8">
                         <h2 class="text-xl font-heading font-[600] text-neutral-700">Related Posts</h2>
