@@ -1,4 +1,4 @@
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getPostsInReverseChronologicalOrder() {
     return (await getCollection("posts"))
@@ -36,4 +36,32 @@ export async function getTagCounts() {
         }
     }
     return Array.from(counts.entries()).toSorted((a, b) => b[1] - a[1]);
+}
+
+/**
+ * Returns posts that share tags with the given post, sorted by number of shared tags
+ */
+export async function getRelatedPosts(currentPost: CollectionEntry<"posts">, maxCount = 3) {
+    const allPosts = await getPostsInReverseChronologicalOrder();
+    
+    // Get all posts except the current one
+    const otherPosts = allPosts.filter(post => post.id !== currentPost.id);
+    
+    // Calculate the number of shared tags for each post
+    const relatedPosts = otherPosts.map(post => {
+        const sharedTags = post.data.tags.filter(tag => 
+            currentPost.data.tags.includes(tag)
+        );
+        return {
+            post,
+            sharedTagsCount: sharedTags.length
+        };
+    });
+    
+    // Filter posts that share at least one tag and sort by number of shared tags
+    return relatedPosts
+        .filter(item => item.sharedTagsCount > 0)
+        .sort((a, b) => b.sharedTagsCount - a.sharedTagsCount)
+        .slice(0, maxCount)
+        .map(item => item.post);
 }

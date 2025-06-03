@@ -8,16 +8,17 @@ import Container from "../components/Container.astro";
 import H1 from "../components/H1.astro";
 import Prose from "../components/Prose.astro";
 import BaseLayout from "./BaseLayout.astro";
+import { getRelatedPosts } from "../lib/utils";
+import PostsTable from "../components/PostsTable.astro";
+import type { CollectionEntry } from "astro:content";
+
 interface Props {
-    frontmatter: {
-        title: string;
-        pubDate: Date;
-        author: string;
-        tags: string[];
-    };
+    entry: CollectionEntry<"posts">;
 }
 
-const { frontmatter } = Astro.props;
+const { entry } = Astro.props;
+const frontmatter = entry.data;
+const relatedPosts = await getRelatedPosts(entry, 3);
 ---
 <BaseLayout pageTitle={frontmatter.title}>
     <Container class="my-10">
@@ -65,6 +66,13 @@ const { frontmatter } = Astro.props;
                         <span>comment</span>
                     </a>
                 </nav>
+                
+                {relatedPosts.length > 0 && (
+                    <div class="mt-8">
+                        <h2 class="text-xl font-heading font-[600] text-neutral-700">Related Posts</h2>
+                        <PostsTable posts={relatedPosts} class="mt-3" />
+                    </div>
+                )}
             </footer>
         </Article >
     </Container>
