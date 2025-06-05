@@ -46,15 +46,17 @@ const relatedPosts = await getRelatedPosts(entry, 3);
                 </div>
             </Prose>
 
-            <footer class="mt-12">
+            <footer class="mt-16">
                 {relatedPosts.length > 0 && (
                     <div class="">
-                        <h2 class="text-xl font-heading font-[600] text-neutral-700">Related posts</h2>
-                        <PostsTable posts={relatedPosts} class="mt-2" />
+                        <h2 class="text-neutral-500 font-sans uppercase tracking-wider text-sm">
+                            Related posts
+                        </h2>
+                        <PostsTable posts={relatedPosts} class="mt-2 text-neutral-600" />
                     </div>
                 )}
 
-                <nav class="mt-8 flex gap-4">
+                <nav class="mt-10 flex gap-4">
                     <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-neutral-500">
                         <span>back to all posts</span>
                     </a>
