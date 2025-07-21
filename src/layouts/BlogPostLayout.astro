@@ -56,13 +56,34 @@ const relatedPosts = await getRelatedPosts(entry, 3);
                     </div>
                 )}
 
+                <h2 class="text-neutral-500 font-sans uppercase tracking-wider text-sm mt-10">
+                    Discussion
+                </h2>
+                <div class="giscus mt-2"></div>
+                <script src="https://giscus.app/client.js"
+                    data-repo="seasonedfish/fishersun.com"
+                    data-repo-id="R_kgDOLI0owQ"
+                    data-category="Announcements"
+                    data-category-id="DIC_kwDOLI0owc4CtOaM"
+                    data-mapping="pathname"
+                    data-strict="1"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="light"
+                    data-lang="en"
+                    data-loading="lazy"
+                    crossorigin="anonymous"
+                    async>
+                </script>
+
                 <nav class="mt-10 flex gap-4">
                     <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-neutral-500">
                         <span>back to all posts</span>
                     </a>
 
                     <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-neutral-500">
-                        <span>comment</span>
+                        <span>comment via email</span>
                     </a>
                 </nav>
             </footer>
