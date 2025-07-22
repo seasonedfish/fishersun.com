@@ -24,7 +24,7 @@ function main(args) {
         return 2;
     }
 
-    const slug = title.toLowerCase().replace(/\s+/g, '-');
+    const slug = title.toLowerCase().replace(/[^\w]+/g, '-');
 
     const directoryName = `${postsDirectory}/${slug}`;
     fs.mkdirSync(directoryName);
