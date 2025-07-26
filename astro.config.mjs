@@ -20,7 +20,8 @@ export default defineConfig({
         borderColor: "transparent",
         frames: {
           frameBoxShadowCssValue: "0 0 0"
-        }
+        },
+        codeLineHeight: "1.4",
       }
     })
   ],
