@@ -34,14 +34,14 @@ const { Content }  = await render(project);
             </h2>
             <div class="mt-1 self-center flex flex-row gap-1 not-prose">
                 {project.data.repo
-                    ? <a href={project.data.repo}>
-                        <GitHub aria-label="GitHub" />
+                    ? <a href={project.data.repo} aria-label="GitHub">
+                        <GitHub aria-hidden="true" />
                     </a> 
                     : ""
                 }
                 {project.data.website
-                    ? <a href={project.data.website}>
-                        <Globe aria-label="Website" />
+                    ? <a href={project.data.website} aria-label="Website">
+                        <Globe aria-hidden="true" />
                     </a> 
                     : ""
                 }
