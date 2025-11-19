@@ -79,11 +79,11 @@ const relatedPosts = await getRelatedPosts(entry, 3);
                 </script>
 
                 <nav class="mt-10 flex gap-4">
-                    <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b-2 text-neutral-500">
+                    <a href="/blog" class="before:content-['←'] rtl:before:content-['→'] before:pe-0.5 border-b text-neutral-500">
                         <span>back to all posts</span>
                     </a>
 
-                    <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b-2 text-neutral-500">
+                    <a href=`mailto:f.sun@wustl.edu?subject=Commenting on \"${frontmatter.title}\"` class="border-b text-neutral-500">
                         <span>comment via email</span>
                     </a>
                 </nav>
