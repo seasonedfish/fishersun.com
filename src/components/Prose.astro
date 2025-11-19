@@ -5,13 +5,7 @@
  */
  const {class: className, ...rest} = Astro.props;
 ---
-<style is:global>
-    .prose .expressive-code {
-        margin-top: 1.25rem;
-        margin-bottom: 1.25rem;
-    }
-</style>
-
-<div class={`prose prose-neutral prose-headings:font-heading prose-headings:font-[600] prose-headings:text-neutral-700 prose-headings:text-balance prose-blockquote:text-neutral-500 ${className}`} {...rest}>
+{/* Styles moved to global.css "@utility prose" declaration */}
+<div class={`prose prose-neutral ${className}`} {...rest}>
     <slot />
 </div>

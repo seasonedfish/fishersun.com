@@ -42,7 +42,6 @@ body {
   }
 
   blockquote {
-    font-style: normal;
     p:first-of-type {
       &::before,
       &::after {
@@ -51,5 +50,25 @@ body {
         content: "";
       }
     }
+
+    font-style: normal;
+    color: theme("colors.neutral.500");
+  }
+
+  /* h1 styled in H1.astro */
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: theme("font-heading");
+    font-weight: 600;
+    color: theme("colors.neutral.700");
+    text-wrap: balance;
+  }
+
+  .expressive-code {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
   }
 }
