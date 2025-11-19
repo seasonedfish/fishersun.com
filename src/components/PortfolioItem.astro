@@ -6,10 +6,11 @@ import GitHub from "../assets/github.svg";
 
 interface Props {
     project: CollectionEntry<"projects">
+    alternateImage?: boolean
     class?: string
 }
 
-const { project, class: className, ...rest } = Astro.props;
+const { project, alternateImage, class: className, ...rest } = Astro.props;
 
 const { Content }  = await render(project);
 ---
@@ -22,20 +23,23 @@ const { Content }  = await render(project);
             float: right;
             width: 50%;
             margin: 0 0 1rem 1rem;
-
-            &.alternate-image {
-	           	float: left;
-	            margin: 0 1rem 1rem 0;
-            }
         }
     }
+
+    .portfolio-item.alternate-image :global(img) {
+        @variant sm {
+      		float: left;
+            margin: 0 1rem 1rem 0;
+        }
+    }
+
 
     h2 svg {
         display: inline-block;
     }
 </style>
 
-<article class=`portfolio-item ${className}` {...rest}>
+<article class=`portfolio-item ${alternateImage && "alternate-image"} ${className}` {...rest}>
     <Prose>
         <header class="flex flew-row gap-2 flex-wrap">
             <h2 class="m-0! inline">

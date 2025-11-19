@@ -18,7 +18,8 @@ const projects = (await getCollection("projects"))
               <hr />
               <PortfolioItem
                   project={project}
-                  class={`mt-10 ${i % 2 == 1 && "alternate-image text-pretty"}`}
+                  alternateImage={i % 2 == 1}
+                  class={`mt-10`}
               />
             ))}
         </div>
