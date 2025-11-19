@@ -10,6 +10,9 @@
     "astro": "astro",
     "compose": "node scripts/compose.js"
   },
+  "imports": {
+    "#global.css": "./src/styles/global.css"
+  },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
     "@astrojs/prism": "^3.3.0",

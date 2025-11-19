@@ -15,15 +15,22 @@ const { Content }  = await render(project);
 ---
 
 <style>
+    @reference "#global.css";
+
     .portfolio-item :global(img) {
-        float: right;
-        width: 50%;
-        margin: 0 0 1rem 1rem;
+        @variant sm {
+            float: right;
+            width: 50%;
+            margin: 0 0 1rem 1rem;
+        }
     }
     .portfolio-item.alternate-image :global(img) {
-        float: left;
-        margin: 0 1rem 1rem 0;
+        @variant sm {
+            float: left;
+            margin: 0 1rem 1rem 0;
+        }
     }
+
     h2 svg {
         display: inline-block;
     }
