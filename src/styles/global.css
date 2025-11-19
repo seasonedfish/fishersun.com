@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+@font-face {
+  font-family: "Bitter Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/BitterPro-SemiBold.woff2") format("woff2");
+}
+
 html {
   /* Always show a scrollbar to prevent content shift
     https://stackoverflow.com/a/7607206/ */
@@ -11,9 +18,38 @@ body {
   min-height: 100vh;
 }
 
-@font-face {
-  font-family: "Bitter Pro";
-  font-style: normal;
-  font-weight: 600;
-  src: url("/fonts/BitterPro-SemiBold.woff2") format("woff2");
+@theme {
+  --font-sans: "Inter", "Adwaita Sans", "BlinkMacSystemFont", "Helvetica Neue",
+    "Helvetica", "Arial", "Roboto", "sans-serif";
+  --font-heading: "Bitter Pro", "serif";
+}
+
+@utility prose {
+  line-height: 1.5;
+  max-width: none;
+
+  code {
+    background-color: theme("colors.neutral.100");
+    border-radius: 3px;
+    padding: 0.1rem;
+    font-weight: 400;
+
+    &::before,
+    &::after {
+      /* Remove backticks from inline code */
+      content: "";
+    }
+  }
+
+  blockquote {
+    font-style: normal;
+    p:first-of-type {
+      &::before,
+      &::after {
+        /* Remove quotes from blockquote
+	  https://github.com/tailwindlabs/tailwindcss-typography/issues/66#issuecomment-1754429609 */
+        content: "";
+      }
+    }
+  }
 }
