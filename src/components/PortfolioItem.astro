@@ -13,13 +13,16 @@ const { project, class: className, ...rest } = Astro.props;
 
 const { Content }  = await render(project);
 ---
+
 <style>
     .portfolio-item :global(img) {
-        @media screen(sm) {
-            float: right;
-            width: 50%;
-            margin: 0 0 1rem 1rem;
-        }
+        float: right;
+        width: 50%;
+        margin: 0 0 1rem 1rem;
+    }
+    .portfolio-item.alternate-image :global(img) {
+        float: left;
+        margin: 0 1rem 1rem 0;
     }
     h2 svg {
         display: inline-block;
@@ -29,21 +32,20 @@ const { Content }  = await render(project);
 <article class=`portfolio-item ${className}` {...rest}>
     <Prose>
         <header class="flex flew-row gap-2 flex-wrap">
-            <h2 class="m-0 inline">
+            <h2 class="m-0! inline">
                 {project.data.name}
             </h2>
             <div class="mt-1 self-center flex flex-row gap-1 not-prose">
-                {project.data.repo
-                    ? <a href={project.data.repo} aria-label="GitHub">
+                {project.data.repo &&
+                    <a href={project.data.repo} aria-label="GitHub">
                         <GitHub aria-hidden="true" />
-                    </a> 
-                    : ""
+                    </a>
                 }
-                {project.data.website
-                    ? <a href={project.data.website} aria-label="Website">
+
+                {project.data.website &&
+                    <a href={project.data.website} aria-label="Website">
                         <Globe aria-hidden="true" />
-                    </a> 
-                    : ""
+                    </a>
                 }
             </div>
         </header>
