@@ -10,7 +10,7 @@
 
 html {
   /* Always show a scrollbar to prevent content shift
-    https://stackoverflow.com/a/7607206/ */
+  https://stackoverflow.com/a/7607206/ */
   overflow-y: scroll;
 }
 
@@ -47,7 +47,7 @@ body {
       &::before,
       &::after {
         /* Remove quotes from blockquote
-	  https://github.com/tailwindlabs/tailwindcss-typography/issues/66#issuecomment-1754429609 */
+		https://github.com/tailwindlabs/tailwindcss-typography/issues/66#issuecomment-1754429609 */
         content: "";
       }
     }
