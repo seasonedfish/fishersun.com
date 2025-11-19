@@ -1,7 +1,6 @@
 ---
 const { tag } = Astro.params;
 
-import { getCollection } from "astro:content";
 import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
 import PostsTable from "../../components/PostsTable.astro";
 import { getPostsInReverseChronologicalOrder, getTags } from "../../lib/utils";
