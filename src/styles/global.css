@@ -1,16 +1,19 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
 html {
-    /* Always show a scrollbar to prevent content shift
+  /* Always show a scrollbar to prevent content shift
     https://stackoverflow.com/a/7607206/ */
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 body {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 @font-face {
-    font-family: 'Bitter Pro';
-    font-style: normal;
-    font-weight: 600;
-    src: url('/fonts/BitterPro-SemiBold.woff2') format('woff2');
+  font-family: "Bitter Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/BitterPro-SemiBold.woff2") format("woff2");
 }

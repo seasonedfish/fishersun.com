@@ -1,14 +1,13 @@
-import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 import expressiveCode from "astro-expressive-code";
-import syntaxTheme from "./src/assets/syntax.json"
+import syntaxTheme from "./src/assets/syntax.json";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
     sitemap(),
     expressiveCode({
       themes: [syntaxTheme],
@@ -19,11 +18,14 @@ export default defineConfig({
         borderRadius: "0.15rem",
         borderColor: "transparent",
         frames: {
-          frameBoxShadowCssValue: "0 0 0"
+          frameBoxShadowCssValue: "0 0 0",
         },
         codeLineHeight: "1.4",
-      }
-    })
+      },
+    }),
   ],
-  site: "https://www.fishersun.com"
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  site: "https://www.fishersun.com",
 });
