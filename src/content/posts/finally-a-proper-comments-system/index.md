@@ -14,7 +14,7 @@ you'll find a discussion section where you can react and comment, and comments t
 
 I'd been considering adding a proper, public comments system for a while.
 
-For all my gripes with PHP, I loved how the PHP docs allowed users to comment on any page.
+For all my gripes with PHP, I loved how the [PHP docs](https://www.php.net/manual/en/language.types.callable.php) allowed users to comment on any page.
 The gotchas and additional examples that users would post were super helpful.
 
 And I've generally found blogs that didn't have public comments to be less credible than sources where the community can weigh in.
