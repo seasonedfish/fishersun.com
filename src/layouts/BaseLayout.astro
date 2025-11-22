@@ -2,9 +2,6 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
-import { getImage } from 'astro:assets';
-import faviconSrc from '../assets/favicon.svg';
-import appleTouchIconSrc from '../assets/apple-touch-icon.png';
 
 interface Props {
   pageTitle: string
@@ -12,11 +9,6 @@ interface Props {
 const { pageTitle } = Astro.props;
 
 const isProd = import.meta.env.PROD;
-
-// Use getImage to benefit from cache busting
-// https://kremalicious.com/favicon-generation-with-astro/
-const faviconSvg = await getImage({ src: faviconSrc, format: "svg" });
-const appleTouchIconPng = await getImage({ src: appleTouchIconSrc, format: "png" });
 ---
 <html lang="en">
   <head>
@@ -24,17 +16,9 @@ const appleTouchIconPng = await getImage({ src: appleTouchIconSrc, format: "png"
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-
     <title>{pageTitle} | Fisher Sun</title>
-
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
-
-    <link rel="icon" href={faviconSvg.src} type="image/svg+xml">
-
-    <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIconPng.src} />
-    <meta name="apple-mobile-web-app-title" content="Fisher Sun" />
-
+    {/* https://css-tricks.com/emoji-as-a-favicon/ */}
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
     {isProd && <script defer src="https://tally.fishersun.com/script.js" data-website-id="54a1b063-832c-4fa6-ae1d-ca033a202e6e" is:inline></script>}
   </head>
 
