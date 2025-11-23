@@ -7,7 +7,7 @@ import PostsTable from "../../components/PostsTable.astro";
 
 const allPosts = await getPostsInReverseChronologicalOrder();
 
-const allPostsGrouped = Object.groupBy(
+const allPostsGrouped = Map.groupBy(
 	allPosts,
 	(post) => post.data.pubDate.toLocaleDateString("en-US", {month: "long", year: "numeric"})
 )
@@ -20,18 +20,14 @@ const allPostsGrouped = Object.groupBy(
     </Prose>
 
     <div class="mt-5">
-       	{(() => {
-      		const elements = [];
-      		Object.keys(allPostsGrouped).forEach(function(key, index) {
-     			elements.push(<div class="mt-5">
-         			<SmallHeading>
-            			{key}
-            		</SmallHeading>
-              		{allPostsGrouped[key]?.map((post) => <a href={`/blog/${post.id}`} class="underline block mt-2">{post.data.title}</a>)}
-          		</div>)
-           	});
-            return elements;
-       	})()}
+    {Array.from(allPostsGrouped).map(([key, posts]) =>
+   		<div class="mt-5">
+ 			<SmallHeading>
+     			{key}
+      		</SmallHeading>
+      		{posts.map((post) => <a href={`/blog/${post.id}`} class="underline block mt-2">{post.data.title}</a>)}
+  		</div>
+    )}
     </div>
 
 </GeneralPageLayout>
