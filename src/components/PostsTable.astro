@@ -7,10 +7,15 @@ interface Props {
 }
 
 const { posts, class: className, ...rest } = Astro.props;
-    
+
 ---
 
 <table class=`w-full border-separate border-spacing-y-2 ${className}` {...rest}>
+	<thead class="collapse">
+		<th>Post</th>
+		<th>Date published</th>
+	</thead>
+
     {posts.map((post) =>
         <tr>
             <td class="align-top">
