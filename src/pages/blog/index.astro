@@ -3,7 +3,6 @@ import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
 import Prose from "../../components/Prose.astro";
 import SmallHeading from "../../components/SmallHeading.astro";
 import { getPostsInReverseChronologicalOrder } from "../../lib/utils";
-import PostsTable from "../../components/PostsTable.astro";
 
 function truncateAtWord({str, numberOfChars}: {str?: string, numberOfChars: number}) {
 	// Adapted from https://www.sitelint.com/blog/truncating-text-and-making-it-accessible
