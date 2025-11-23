@@ -5,6 +5,24 @@ import SmallHeading from "../../components/SmallHeading.astro";
 import { getPostsInReverseChronologicalOrder } from "../../lib/utils";
 import PostsTable from "../../components/PostsTable.astro";
 
+function truncateAtWord({str, numberOfChars}: {str?: string, numberOfChars: number}) {
+	// Adapted from https://www.sitelint.com/blog/truncating-text-and-making-it-accessible
+	if (!str) {
+		return str;
+	}
+
+	const nextSpace = str.indexOf(" ", numberOfChars);
+
+	if (nextSpace === -1) {
+		return str;
+	}
+
+	// Tailwind's line-clamp applies a visual ellipsis,
+	// but we apply it again here for screen reader users and
+	// users whose browsers don't support it.
+	return str.substring(0, nextSpace) + "…";
+}
+
 const allPosts = await getPostsInReverseChronologicalOrder();
 
 const allPostsGrouped = Map.groupBy(
@@ -32,7 +50,7 @@ const allPostsGrouped = Map.groupBy(
             		<Prose class="mt-1 line-clamp-3">
               			<span class="sr-only">Preview: </span>
                			{/* Strip HTML tags: https://stackoverflow.com/a/5002161/14106506 */}
-		           		{post.rendered?.html.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 300)}
+		           		{truncateAtWord({str: post.rendered?.html.replace(/<\/?[^>]+(>|$)/g, ""), numberOfChars: 300})}
 		            </Prose>
            		</li>
            	)}
