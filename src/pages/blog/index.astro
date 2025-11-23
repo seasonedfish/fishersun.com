@@ -1,10 +1,16 @@
 ---
 import GeneralPageLayout from "../../layouts/GeneralPageLayout.astro";
 import Prose from "../../components/Prose.astro";
+import SmallHeading from "../../components/SmallHeading.astro";
 import { getPostsInReverseChronologicalOrder } from "../../lib/utils";
 import PostsTable from "../../components/PostsTable.astro";
 
 const allPosts = await getPostsInReverseChronologicalOrder();
+
+const allPostsGrouped = Object.groupBy(
+	allPosts,
+	(post) => post.data.pubDate.toLocaleDateString("en-US", {month: "long", year: "numeric"})
+)
 ---
 <GeneralPageLayout pageTitle="Blog" headingText="My blog">
     <Prose>
@@ -13,6 +19,19 @@ const allPosts = await getPostsInReverseChronologicalOrder();
         </p>
     </Prose>
 
+    <div class="mt-5">
+       	{(() => {
+      		const elements = [];
+      		Object.keys(allPostsGrouped).forEach(function(key, index) {
+     			elements.push(<div class="mt-5">
+         			<SmallHeading>
+            			{key}
+            		</SmallHeading>
+              		{allPostsGrouped[key]?.map((post) => <a href={`/blog/${post.id}`} class="underline block mt-2">{post.data.title}</a>)}
+          		</div>)
+           	});
+            return elements;
+       	})()}
+    </div>
 
-    <PostsTable posts={allPosts} class="mt-5" />
 </GeneralPageLayout>
