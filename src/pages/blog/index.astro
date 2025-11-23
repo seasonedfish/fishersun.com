@@ -20,7 +20,7 @@ const allPostsGrouped = Map.groupBy(
     </Prose>
 
     <div class="mt-5">
-    {Array.from(allPostsGrouped).map(([key, posts]) =>
+    {Array.from(allPostsGrouped, ([key, posts]) =>
    		<div class="mt-5">
  			<SmallHeading>
      			{key}
