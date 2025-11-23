@@ -32,7 +32,7 @@ const allPostsGrouped = Map.groupBy(
             		<Prose class="mt-1 line-clamp-3">
               			<span class="sr-only">Preview: </span>
                			{/* Strip HTML tags: https://stackoverflow.com/a/5002161/14106506 */}
-		           		{post.rendered?.html.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 200)}
+		           		{post.rendered?.html.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 300)}
 		            </Prose>
            		</li>
            	)}
