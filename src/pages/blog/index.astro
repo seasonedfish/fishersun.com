@@ -19,13 +19,23 @@ const allPostsGrouped = Map.groupBy(
         </p>
     </Prose>
 
-    <div class="mt-5">
+    <div class="mt-8">
     {Array.from(allPostsGrouped, ([key, posts]) =>
-   		<div class="mt-5">
+   		<div class="mt-8">
  			<SmallHeading>
      			{key}
       		</SmallHeading>
-      		{posts.map((post) => <a href={`/blog/${post.id}`} class="underline block mt-2">{post.data.title}</a>)}
+        	<div class="flex flex-col gap-4">
+        	{posts.map((post) =>
+         		<div class="mt-1">
+         			<a href={`/blog/${post.id}`} class="underline">{post.data.title}</a>
+            			<Prose class="mt-1 line-clamp-3">
+               			{/* Strip HTML tags: https://stackoverflow.com/a/5002161/14106506 */}
+		           		{post.rendered?.html.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 300)}
+		            </Prose>
+           		</div>
+           	)}
+         	</div>
   		</div>
     )}
     </div>
