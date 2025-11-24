@@ -11,6 +11,7 @@ import BaseLayout from "./BaseLayout.astro";
 import { getRelatedPosts } from "../lib/utils";
 import PostsTable from "../components/PostsTable.astro";
 import type { CollectionEntry } from "astro:content";
+import SmallHeading from "../components/SmallHeading.astro";
 
 interface Props {
     entry: CollectionEntry<"posts">;
@@ -49,16 +50,16 @@ const relatedPosts = await getRelatedPosts(entry, 3);
             <footer class="mt-16">
                 {relatedPosts.length > 0 && (
                     <div class="">
-                        <h2 class="text-neutral-500 font-sans uppercase tracking-wider text-sm">
+                        <SmallHeading>
                             Related posts
-                        </h2>
+                        </SmallHeading>
                         <PostsTable posts={relatedPosts} class="mt-2 text-neutral-600" />
                     </div>
                 )}
 
-                <h2 class="text-neutral-500 font-sans uppercase tracking-wider text-sm mt-10">
+                <SmallHeading class="mt-10">
                     Discussion
-                </h2>
+                </SmallHeading>
                 <div class="giscus mt-2"></div>
                 <script src="https://giscus.app/client.js"
                     data-repo="seasonedfish/fishersun.com"
