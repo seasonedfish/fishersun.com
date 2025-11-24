@@ -1,5 +1,4 @@
 import { getCollection, type CollectionEntry } from "astro:content";
-import { Temporal } from "temporal-polyfill";
 
 export async function getPostsInReverseChronologicalOrder() {
     return (await getCollection("posts"))
@@ -44,13 +43,13 @@ export async function getTagCounts() {
  */
 export async function getRelatedPosts(currentPost: CollectionEntry<"posts">, maxCount = 3) {
     const allPosts = await getPostsInReverseChronologicalOrder();
-
+    
     // Get all posts except the current one
     const otherPosts = allPosts.filter(post => post.id !== currentPost.id);
-
+    
     // Calculate the number of shared tags for each post
     const relatedPosts = otherPosts.map(post => {
-        const sharedTags = post.data.tags.filter(tag =>
+        const sharedTags = post.data.tags.filter(tag => 
             currentPost.data.tags.includes(tag)
         );
         return {
@@ -58,15 +57,11 @@ export async function getRelatedPosts(currentPost: CollectionEntry<"posts">, max
             sharedTagsCount: sharedTags.length
         };
     });
-
+    
     // Filter posts that share at least one tag and sort by number of shared tags
     return relatedPosts
         .filter(item => item.sharedTagsCount > 0)
         .sort((a, b) => b.sharedTagsCount - a.sharedTagsCount)
         .slice(0, maxCount)
         .map(item => item.post);
-}
-
-export function zonedDateTimeFromDate(date: Date): Temporal.ZonedDateTime {
-	return Temporal.Instant.fromEpochMilliseconds(date.getTime()).toZonedDateTimeISO("America/New_York");
 }
