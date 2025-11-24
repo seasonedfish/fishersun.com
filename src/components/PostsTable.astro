@@ -1,5 +1,7 @@
 ---
 import { getCollection } from "astro:content";
+import ShortDate from "./ShortDate.astro";
+import { zonedDateTimeFromDate } from "../lib/utils";
 
 interface Props {
     posts: Awaited<ReturnType<typeof getCollection<"posts">>>
@@ -23,7 +25,7 @@ const { posts, class: className, ...rest } = Astro.props;
             </td>
 
             <td class="align-top text-end font-mono">
-                {post.data.pubDate.toLocaleDateString("en-us", {year: "numeric", month: "2-digit", day: "2-digit"})}
+            	<ShortDate date={zonedDateTimeFromDate(post.data.pubDate)} />
             </td>
         </tr>
     )}
