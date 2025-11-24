@@ -25,8 +25,9 @@ const isProd = import.meta.env.PROD;
   </head>
 
   <body class="">
+  	<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute top-0 left-0 underline">Skip to main content</a>
     <SiteHeader class="print:hidden mt-10"/>
-    <main class="">
+    <main class="" id="main-content">
       <slot />
     </main>
     <SiteFooter />
