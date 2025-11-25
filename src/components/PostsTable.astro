@@ -11,7 +11,7 @@ const { posts, class: className, ...rest } = Astro.props;
 ---
 
 <table class=`w-full border-separate border-spacing-y-2 ${className}` {...rest}>
-	<thead class="collapse">
+	<thead class="hidden">
 		<th>Post</th>
 		<th>Date published</th>
 	</thead>
