@@ -72,3 +72,8 @@ body {
     margin-bottom: 1.25rem;
   }
 }
+
+@utility prose-neutral {
+  /* Tailwind gets applied before Expressive Code, so set bg to prevent a flash of dark background. */
+  --tw-prose-pre-bg: theme("colors.neutral.100");
+}
