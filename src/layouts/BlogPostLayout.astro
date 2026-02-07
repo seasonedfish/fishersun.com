@@ -23,7 +23,6 @@ const relatedPosts = await getRelatedPosts(entry, 3);
 
 const discussionUrl = new URL("https://github.com/seasonedfish/fishersun.com/discussions");
 discussionUrl.searchParams.append("discussions_q", entry.id);
-console.log(discussionUrl.toString());
 ---
 <BaseLayout pageTitle={frontmatter.title}>
     <Container class="my-10">
