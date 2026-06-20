@@ -36,7 +36,7 @@ discussionUrl.searchParams.append("discussions_q", entry.id);
 
                     <p>
                         {
-                            frontmatter.tags
+                            frontmatter.tags.length === 0 ? "untagged" : frontmatter.tags
                                 .map((t) => <a href={`/tags/${t}`} class="underline">{t}</a>)
                                 .reduce((prev, curr) => [prev, ", ", curr])
                         }
