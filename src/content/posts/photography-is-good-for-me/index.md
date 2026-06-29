@@ -52,7 +52,10 @@ It's sort of like how holding a drink in your hand at a party makes it easier to
 
 And photography got me to get my steps in.
 Today, taking photos in Brooklyn and Central Park, I totaled 28,104 steps, much higher than my average (which I will not disclose).
-And I discovered the Conservatory Garden, which was absolutely beautiful!
+And I discovered the Conservatory Garden, which was absolutely beautiful.
 
 I bought a bunch of film today, so I hope to continue to get out there, find lovely places, talk to people, and take cool pictures.
 Stay tuned for more photography blog posts in the future!
+
+## Acknowledgements
+Many thanks to Joe, Sarah, and Charlene for reviewing the first version of this post!
