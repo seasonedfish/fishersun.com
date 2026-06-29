@@ -17,7 +17,7 @@ as I would often have dozens of tabs open when I worked on my Mac with no issues
 (True, sometimes, the OS would prompt me to close something because it was close to running out of memory, but it would never completely freeze up.)
 
 ## Finding a killer that's not so hesitant to do its job
-I remembered reading somewhere that the Linux <a href="https://wizardzines.com/comics/oom-killer/">OOM killer</a>
+I remembered reading somewhere that the Linux [OOM killer](https://wizardzines.com/comics/oom-killer/)
 (the kernel mechanism that kills processes when the OS is out of memory)
 doesn't like to kill processes unless it has absolutely no choice, leading to systems staying unresponsive for long periods of time.
 I remembered that there existed a project called [earlyoom](https://github.com/rfjakob/earlyoom) that sought to implement a more eager OOM killer.
