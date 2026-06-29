@@ -3,7 +3,7 @@ title: "Photography is good for me"
 pubDate: 2026-06-28T02:03:58.323Z
 description: ""
 author: "Fisher Sun"
-tags: []
+tags: [photography]
 ---
 
 On Sunday, I bought a film camera at the flea market.
